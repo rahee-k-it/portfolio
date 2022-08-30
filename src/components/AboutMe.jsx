@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   height: 650px;
   width: 100%;
-  background-color: #535353;
+  background-color: white;
   font-size: 30px;
   position: relative;
 `;
@@ -12,7 +12,7 @@ const Container = styled.div`
 const Title = styled.div`
   height: 100px;
   width: 350px;
-  background-color: #e31a3b;
+  background-color: #ffa502;
   font-size: 70px;
   font-weight: 500;
   margin: 10px;
@@ -24,7 +24,7 @@ const ContentBox = styled.div`
   border-radius: 20px;
   height: 500px;
   width: 90%;
-  background-color: wheat;
+  background-color: #4b7bec;
   margin: 5%;
   position: absolute;
   z-index: 1;

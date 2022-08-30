@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
+  margin-top: 50px;
   height: 650px;
   width: 100%;
-  background-color: black;
+  background-color: white;
   font-size: 30px;
   position: relative;
 `;
@@ -12,7 +13,7 @@ const Container = styled.div`
 const Title = styled.div`
   height: 100px;
   width: 200px;
-  background-color: #e31a3b;
+  background-color: #ffa502;
   font-size: 70px;
   font-weight: 500;
   margin: 10px;
@@ -24,7 +25,7 @@ const ContentBox = styled.div`
   border-radius: 20px;
   height: 500px;
   width: 90%;
-  background-color: wheat;
+  background-color: #9c88ff;
   margin: 5%;
   position: absolute;
   z-index: 1;

@@ -4,11 +4,12 @@ import styled from 'styled-components';
 const Container = styled.div`
   height: 500px;
   width: 100%;
-  font-size: 50px;
   background-image: url('image/sea.jpg');
   background-size: cover;
   background-position: 50% 20%;
   color: white;
+  font-size: 70px;
+  font-weight: 900;
   display: flex;
   justify-content: center;
   align-items: center;
