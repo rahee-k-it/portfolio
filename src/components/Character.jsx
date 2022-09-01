@@ -19,9 +19,9 @@ const ContentBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-width: 0px 0px 15px 0px;
-  border-style: solid;
-  border-color: white;
+  /* border-width: 0px 0px 15px 0px; */
+  /* border-style: solid; */
+  /* border-color: white; */
 `;
 const ImageBox = styled.div`
   position: relative;
@@ -31,7 +31,7 @@ const Image = styled.div`
   width: ${({ width }) => width};
   background-image: url(${({ src }) => src});
   background-size: cover;
-  border-radius: 5px;
+  border-radius: 5px 60px 5px 30px;
 `;
 
 const Blur = styled.div`

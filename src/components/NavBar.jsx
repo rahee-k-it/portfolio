@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faCircle } from '@fortawesome/free-solid-svg-icons';
@@ -30,14 +30,12 @@ const ProgreBlurBar = styled.div`
   height: 5px;
   width: 1200px;
   background-color: white;
-  /* position: relative; */
   position: absolute;
   margin-left: 20px;
   z-index: 5;
 `;
 
 const HouseIcon = styled.div`
-  /* background-color: pink; */
   position: absolute;
   color: white;
   font-size: 30px;
@@ -49,7 +47,6 @@ const HouseIcon = styled.div`
 `;
 
 const LandMark = styled.div`
-  /* background-color: green; */
   height: 80px;
   position: absolute;
 `;
@@ -59,7 +56,6 @@ const CircleDotIcon = styled.div`
   z-index: 5;
   color: white;
   font-size: 20px;
-  /* background-color: aqua; */
 `;
 
 const Text = styled.div`
@@ -69,6 +65,23 @@ const Text = styled.div`
 `;
 
 function NavBar() {
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll); //clean up
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY >= 300) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+
   return (
     <>
       <Container>

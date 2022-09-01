@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -8,7 +8,6 @@ const Container = styled.div`
   position: relative;
   padding-top: 100px;
   background-color: black;
-  /* background-color: #9ac7f8; */
 `;
 
 const Title = styled.div`
@@ -23,33 +22,31 @@ const Title = styled.div`
 `;
 
 const ContentBox = styled.div`
-  border-width: 15px 0px 0px 0px;
+  border-width: 3px 3px 3px 3px;
   border-style: solid;
-  border-color: white;
   height: 500px;
   width: 90%;
-  /* margin: 5%; */
   margin: 5% 5% 0% 5%;
   position: absolute;
-  /* z-index: 1; */
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   color: white;
-  /* background-color: blueviolet; */
+  opacity: ${({ opacity }) => (opacity ? '1' : '0')};
+  transition: opacity 1s ease-in-out;
 `;
 
 const Introduction = styled.div`
-  height: 400px;
-  width: 700px;
-  /* background-color: antiquewhite; */
+  height: 300px;
+  width: 600px;
+  padding: 0px 50px;
+  text-align: start;
 `;
 
 const PersonalInformation = styled.div`
-  height: 400px;
+  height: 300px;
   width: 500px;
-  /* background-color: #e2cd2b; */
   text-align: start;
   padding-left: 50px;
 `;
@@ -58,18 +55,50 @@ const BoldText = styled.span`
   font-weight: 700;
 `;
 
-const Button = styled.button``;
-
 function AboutMe() {
+  // const [scroll, setScroll] = useState(false);
+
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll); //clean up
+  //   };
+  // }, []);
+
+  // const handleScroll = () => {
+  //   if (window.scrollY >= 300) {
+  //     setScroll(true);
+  //     console.log('scroll300 어바웃미 보임', window.scrollY);
+  //   } else {
+  //     setScroll(false);
+  //   }
+  // };
+  const [target, setTarget] = useState(null);
+  const [opacity, setOpacity] = useState(false);
+  const handleIntersection = ([entry], observer) => {
+    if (entry.isIntersecting) {
+      console.log('intersecting');
+      setOpacity(1);
+      // observer.unObserve(entry.target)
+      observer.disconnect();
+    }
+  };
+  useEffect(() => {
+    let observer;
+    if (target) {
+      observer = new IntersectionObserver(handleIntersection);
+      observer.observe(target);
+    }
+  }, [target]);
   return (
     <Container>
-      <Title>About Me</Title>
-      <ContentBox>
+      <Title ref={setTarget}>About Me</Title>
+
+      <ContentBox opacity={opacity}>
         <Introduction>
-          저는 만드는 행위를 즐깁니다. 어렸을 때부터 만들기를 좋아하여 나이가 들어도 꾸준히 무엇인가 사부작 거리며
-          만들어왔습니다. 코딩을 통해 컴퓨더 화면을 구성할 수 있음을 알게 되었고 흥미가 생겼습니다.저는 만드는 행위를
-          즐깁니다. 어렸을 때부터 만들기를 좋아하여 나이가 들어도 꾸준히 무엇인가 사부작 거리며 만들어왔습니다. 코딩을
-          통해 컴퓨더 화면을 구성할 수 있음을 알게 되었고 흥미가 생겼습니다.
+          삶에 있어 즐거운 일에 몰두하며 시간보내는 것을 가장 중요하게 생각합니다. 우연한 기회에 코딩을 접하게 되었고,
+          코드를 하나씩 배워가며 적용함에 있어 코딩의 재미를 느꼈습니다. 제가 작성한 코드가 화면에 아름답게 비추어지듯
+          코딩을 통해 미래를 그려나가는 개발자가 되고싶습니다.
         </Introduction>
         <PersonalInformation>
           <p>
@@ -81,8 +110,6 @@ function AboutMe() {
           <p>
             <BoldText>이메일:</BoldText> rahee.k.it@gmail.com
           </p>
-          <Button>자기소개서</Button>
-          <Button>이력서</Button>
         </PersonalInformation>
       </ContentBox>
     </Container>

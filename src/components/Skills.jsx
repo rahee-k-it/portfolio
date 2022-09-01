@@ -22,20 +22,18 @@ const Title = styled.div`
 `;
 
 const ContentBox = styled.div`
-  background-image: url('image/whitestar.jpg');
+  background-image: url('image/a.jpg');
   background-size: cover;
-  background-position: 50% 30%;
-  border-radius: 20px;
+  background-position: 50% 40%;
+  border-radius: 0px;
   height: 500px;
   width: 90%;
   background-color: #f1d28d;
   margin: 5%;
   position: absolute;
-  /* z-index: 1; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* box-shadow: 0px 0px 20px 5px white; */
   box-shadow: inset 0px 0px 35px 5px wheat;
 `;
 
