@@ -2,39 +2,44 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  margin-top: 50px;
   height: 650px;
   width: 100%;
-  background-color: white;
+  background-color: #dff9fb;
   font-size: 30px;
   position: relative;
+  background-color: black;
 `;
 
 const Title = styled.div`
   height: 100px;
   width: 200px;
-  background-color: #ffa502;
+  background-color: #3c40c6;
   font-size: 70px;
   font-weight: 500;
   margin: 10px;
   position: absolute;
-  z-index: 2;
+  z-index: 1;
 `;
 
 const ContentBox = styled.div`
+  background-image: url('image/whitestar.jpg');
+  background-size: cover;
+  background-position: 50% 30%;
   border-radius: 20px;
   height: 500px;
   width: 90%;
-  background-color: #9c88ff;
+  background-color: #f1d28d;
   margin: 5%;
   position: absolute;
-  z-index: 1;
+  /* z-index: 1; */
   display: flex;
   justify-content: center;
   align-items: center;
+  /* box-shadow: 0px 0px 20px 5px white; */
+  box-shadow: inset 0px 0px 35px 5px wheat;
 `;
 
-const ImageBox = styled.div`
+const Image = styled.div`
   height: 200px;
   width: 200px;
   background-size: contain;
@@ -49,10 +54,10 @@ function Skills() {
     <Container>
       <Title>Skills</Title>
       <ContentBox>
-        <ImageBox src='image/html.svg' />
-        <ImageBox src='image/css.svg' />
-        <ImageBox src='image/js.png' />
-        <ImageBox src='image/react.png' />
+        <Image src='image/html.svg' />
+        <Image src='image/css.svg' />
+        <Image src='image/js.png' />
+        <Image src='image/react.png' />
       </ContentBox>
     </Container>
   );

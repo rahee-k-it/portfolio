@@ -1,18 +1,20 @@
 import './App.css';
 import Header from './components/Header';
 import Skills from './components/Skills';
-import Project from './components/Project';
+import Projects from './components/Projects';
 import AboutMe from './components/AboutMe';
 import NavBar from './components/NavBar';
+import Character from './components/Character';
 
 function App() {
   return (
     <div className='App'>
       <NavBar></NavBar>
       <Header></Header>
-      <Skills></Skills>
-      <Project></Project>
       <AboutMe></AboutMe>
+      <Character></Character>
+      <Skills></Skills>
+      <Projects></Projects>
     </div>
   );
 }
