@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -7,7 +7,6 @@ const Container = styled.div`
   font-size: 30px;
   display: flex;
   justify-content: center;
-  align-items: center;
   background-color: black;
   /* background-color: green; */
 `;
@@ -19,13 +18,19 @@ const ContentBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border-width: 0px 0px 15px 0px; */
-  /* border-style: solid; */
-  /* border-color: white; */
 `;
+
 const ImageBox = styled.div`
   position: relative;
+  opacity: ${({ opacity }) => (opacity ? '1' : '0')};
+  transition: opacity 3s ease-in-out, transform 3s ease-in-out;
+  transition-delay: ${({ delay = 0 }) => delay};
+  transform: translate(
+    ${({ translate }) => (translate ? '0px' : '100px')},
+    ${({ translate }) => (translate ? '0px' : '100px')}
+  );
 `;
+
 const Image = styled.div`
   height: ${({ height }) => height};
   width: ${({ width }) => width};
@@ -61,24 +66,43 @@ const Text = styled.div`
 `;
 
 function Character() {
+  const [target, setTarget] = useState(null);
+  const [opacity, setOpacity] = useState(false);
+  const [translate, setTranslate] = useState(false);
+  const handleIntersection = ([entry], observer) => {
+    if (entry.isIntersecting) {
+      console.log('intersecting 캐릳터');
+      setOpacity(1);
+      setTranslate(true);
+      // observer.unObserve(entry.target)
+      observer.disconnect();
+    }
+  };
+  useEffect(() => {
+    let observer;
+    if (target) {
+      observer = new IntersectionObserver(handleIntersection);
+      observer.observe(target);
+    }
+  }, [target]);
   return (
-    <Container>
+    <Container ref={setTarget}>
       <ContentBox>
-        <ImageBox>
+        <ImageBox opacity={opacity} translate={translate}>
           <Blur height='600px' width='350px'>
             <Text>Challenge</Text>
           </Blur>
           <Image src='image/climbing.jpg' height='600px' width='350px' />
         </ImageBox>
 
-        <ImageBox>
+        <ImageBox opacity={opacity} delay='.5s' translate={translate}>
           <Blur height='350px' width='500px'>
             <Text>cooperation</Text>
           </Blur>
           <Image src='image/dance.jpg' height='350px' width='500px' />
         </ImageBox>
 
-        <ImageBox>
+        <ImageBox opacity={opacity} delay='1s' translate={translate}>
           <Blur height='450px' width='450px'>
             <Text>Positive</Text>
           </Blur>

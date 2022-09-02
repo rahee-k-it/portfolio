@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile, faCalendarDays, faPeopleGroup, faGear } from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.div`
-  height: 1500px;
-  background-color: #dff9fb;
+  height: 700px;
+  /* background-color: #dff9fb; */
   font-size: 30px;
   position: relative;
   padding: 80px;
   background-color: black;
+  /* background-color: azure; */
 `;
 
 const Title = styled.div`
@@ -17,7 +18,7 @@ const Title = styled.div`
   width: 230px;
   background-color: #ffa502;
   font-size: 70px;
-  font-weight: 500;
+  font-family: fantasy;
   position: absolute;
   top: 20px;
   left: 20px;
@@ -27,6 +28,14 @@ const Title = styled.div`
 const FlexBox = styled.div`
   display: flex;
   justify-content: space-between;
+
+  opacity: ${({ opacity }) => (opacity ? '1' : '0')};
+  transition: opacity 3s ease-in-out, transform 3s ease-in-out;
+  transition-delay: ${({ delay = 0 }) => delay};
+  transform: translate(
+    ${({ translate }) => (translate ? '0px' : '200px')},
+    ${({ translate }) => (translate ? '0px' : '0px')}
+  );
 `;
 
 const ContentBox = styled.div`
@@ -54,13 +63,39 @@ const Intro = styled.div`
   align-items: center;
 `;
 
-const ProjectInTitle = styled.div`
-  color: #535c68;
+const Wrapper = styled.div`
   height: 70px;
-  font-size: 50px;
-  font-weight: 500;
-  margin-bottom: 20px;
+  display: grid;
+  place-items: center;
 `;
+
+const Typing = styled.div`
+  width: 10ch;
+  animation: typing 2s steps(10), blink 0.3s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-size: 2em;
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+`;
+
+// const A = styled.div`
+//   /* background-color: pink; */
+//   height: 70px;
+//   display: flex;
+//   justify-content: center;
+// `;
 
 const Image = styled.div`
   height: 400px;
@@ -69,37 +104,33 @@ const Image = styled.div`
   box-shadow: 5px 5px 5px 5px gray;
 `;
 
-function Projects() {
+function Project2() {
+  const [target, setTarget] = useState(null);
+  const [opacity, setOpacity] = useState(false);
+  const [translate, setTranslate] = useState(false);
+  const handleIntersection = ([entry], observer) => {
+    if (entry.isIntersecting) {
+      console.log('intersecting 캐릳터');
+      setOpacity(1);
+      setTranslate(true);
+      // observer.unObserve(entry.target)
+      observer.disconnect();
+    }
+  };
+  useEffect(() => {
+    let observer;
+    if (target) {
+      observer = new IntersectionObserver(handleIntersection);
+      observer.observe(target);
+    }
+  }, [target]);
   return (
-    <Container>
-      <Title>Project</Title>
-      <FlexBox>
+    <Container ref={setTarget}>
+      <FlexBox opacity={opacity} translate={translate}>
         <ContentBox>
-          <ProjectInTitle>StoryBook</ProjectInTitle>
-          <Image src='image/storybook.png' />
-        </ContentBox>
-        <IntroBox>
-          <Intro>
-            <FontAwesomeIcon icon={faFile} />
-            <p>프로젝트명: StoryBook</p>
-          </Intro>
-          <Intro>
-            <FontAwesomeIcon icon={faCalendarDays} />
-            <p>일정: 2022.07.25~</p>
-          </Intro>
-          <Intro>
-            <FontAwesomeIcon icon={faPeopleGroup} />
-            <p>팀 프로젝트</p>
-          </Intro>
-          <Intro>
-            <FontAwesomeIcon icon={faGear} />
-            <p>react를 사용하여 UI component를 만듦</p>
-          </Intro>
-        </IntroBox>
-      </FlexBox>
-      <FlexBox>
-        <ContentBox>
-          <ProjectInTitle>Portfolio</ProjectInTitle>
+          <Wrapper>
+            <Typing>Portfolio Site</Typing>
+          </Wrapper>
           <Image src='image/portfolio.png' />
         </ContentBox>
         <IntroBox>
@@ -125,4 +156,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default Project2;

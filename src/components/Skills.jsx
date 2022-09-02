@@ -1,30 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  height: 650px;
+  height: 800px;
   width: 100%;
   background-color: #dff9fb;
   font-size: 30px;
   position: relative;
   background-color: black;
+  /* background-color: pink; */
 `;
 
 const Title = styled.div`
+  opacity: ${({ opacity }) => (opacity ? '1' : '0')};
+  transition: opacity 2s ease-in-out;
   height: 100px;
   width: 200px;
   background-color: #3c40c6;
   font-size: 70px;
-  font-weight: 500;
+  font-family: fantasy;
   margin: 10px;
   position: absolute;
   z-index: 1;
 `;
 
 const ContentBox = styled.div`
-  background-image: url('image/a.jpg');
+  opacity: ${({ opacity }) => (opacity ? '1' : '0')};
+  transition: opacity 3s ease-in-out;
+  background-image: url('image/white2.jpg');
   background-size: cover;
-  background-position: 50% 40%;
+  background-position: 30% 20%;
   border-radius: 0px;
   height: 500px;
   width: 90%;
@@ -48,10 +53,27 @@ const Image = styled.div`
 `;
 
 function Skills() {
+  const [target, setTarget] = useState(null);
+  const [opacity, setOpacity] = useState(false);
+  const handleIntersection = ([entry], observer) => {
+    if (entry.isIntersecting) {
+      console.log('intersecting');
+      setOpacity(1);
+      // observer.unObserve(entry.target)
+      observer.disconnect();
+    }
+  };
+  useEffect(() => {
+    let observer;
+    if (target) {
+      observer = new IntersectionObserver(handleIntersection);
+      observer.observe(target);
+    }
+  }, [target]);
   return (
-    <Container>
-      <Title>Skills</Title>
-      <ContentBox>
+    <Container ref={setTarget}>
+      <Title opacity={opacity}>Skills</Title>
+      <ContentBox opacity={opacity}>
         <Image src='image/html.svg' />
         <Image src='image/css.svg' />
         <Image src='image/js.png' />

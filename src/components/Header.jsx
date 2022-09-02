@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  height: 700px;
+  height: 100vh;
   width: 100%;
   background-image: url('image/dot3.jpg');
   background-size: cover;
   background-position: 50% 70%;
-  font-size: 30px;
-  font-weight: 900;
 
   -webkit-font-smoothing: antialiased;
   display: flex;
@@ -21,6 +19,9 @@ const H1 = styled.h1`
 `;
 
 const Span = styled.span`
+  font-size: 60px;
+  font-weight: 900;
+  opacity: ${({ opacity }) => (opacity ? '1' : '0')};
   position: relative;
   top: 2px;
   animation: bounce 0.5s ease infinite alternate;
@@ -30,60 +31,79 @@ const Span = styled.span`
 
   :nth-child(1) {
     animation-delay: 0.2s;
+    transition: opacity 2s ease-in-out;
   }
   :nth-child(2) {
     animation-delay: 0.1s;
+    transition: opacity 1s ease-in-out;
   }
   :nth-child(3) {
     animation-delay: 0.2s;
+    transition: opacity 2s ease-in-out;
   }
   :nth-child(4) {
     animation-delay: 0.1s;
+    transition: opacity 1s ease-in-out;
   }
   :nth-child(5) {
     animation-delay: 0.4s;
+    transition: opacity 4s ease-in-out;
   }
   :nth-child(6) {
     animation-delay: 0.3s;
+    transition: opacity 3s ease-in-out;
   }
   :nth-child(7) {
     animation-delay: 0.1s;
+    transition: opacity 1s ease-in-out;
   }
   :nth-child(8) {
     animation-delay: 0.3s;
+    transition: opacity 3s ease-in-out;
   }
   :nth-child(9) {
     animation-delay: 0.5s;
+    transition: opacity 5s ease-in-out;
   }
   :nth-child(10) {
     animation-delay: 0.7s;
+    transition: opacity 7s ease-in-out;
   }
   :nth-child(11) {
     animation-delay: 0.6s;
+    transition: opacity 6s ease-in-out;
   }
   :nth-child(12) {
     animation-delay: 0.4s;
+    transition: opacity 4s ease-in-out;
   }
   :nth-child(13) {
     animation-delay: 0.2s;
+    transition: opacity 2s ease-in-out;
   }
   :nth-child(14) {
-    animation-delay: 0.3s;
+    animation-delay: 0.1s;
+    transition: opacity 1s ease-in-out;
   }
   :nth-child(15) {
-    animation-delay: 0.5s;
+    animation-delay: 0.1s;
+    transition: opacity 1s ease-in-out;
   }
   :nth-child(16) {
-    animation-delay: 0.6s;
+    animation-delay: 0.1s;
+    transition: opacity 1s ease-in-out;
   }
   :nth-child(17) {
     animation-delay: 0.1s;
+    transition: opacity 1s ease-in-out;
   }
   :nth-child(18) {
     animation-delay: 0.3s;
+    transition: opacity 3s ease-in-out;
   }
   :nth-child(19) {
     animation-delay: 0.2s;
+    transition: opacity 2s ease-in-out;
   }
 
   @keyframes bounce {
@@ -96,33 +116,50 @@ const Span = styled.span`
 `;
 
 function Header() {
+  const [target, setTarget] = useState(null);
+  const [opacity, setOpacity] = useState(false);
+  const handleIntersection = ([entry], observer) => {
+    if (entry.isIntersecting) {
+      console.log('intersecting');
+      setOpacity(1);
+      // observer.unObserve(entry.target)
+      observer.disconnect();
+    }
+  };
+  useEffect(() => {
+    let observer;
+    if (target) {
+      observer = new IntersectionObserver(handleIntersection);
+      observer.observe(target);
+    }
+  }, [target]);
   return (
-    <Container>
+    <Container ref={setTarget}>
       <H1>
         <p>
-          <Span>반</Span>
-          <Span>갑</Span>
-          <Span>습</Span>
-          <Span>니</Span>
-          <Span>다</Span>
+          <Span opacity={opacity}>반</Span>
+          <Span opacity={opacity}>갑</Span>
+          <Span opacity={opacity}>습</Span>
+          <Span opacity={opacity}>니</Span>
+          <Span opacity={opacity}>다</Span>
         </p>
         <p>
-          <Span>프</Span>
-          <Span>론</Span>
-          <Span>트</Span>
-          <Span>엔</Span>
-          <Span>드</Span>
-          &nbsp;
-          <Span>개</Span>
-          <Span>발</Span>
-          <Span>자</Span>
-          &nbsp;
-          <Span>김</Span>
-          <Span>라</Span>
-          <Span>희</Span>
-          <Span>입</Span>
-          <Span>니</Span>
-          <Span>다</Span>
+          <Span opacity={opacity}>프</Span>
+          <Span opacity={opacity}>론</Span>
+          <Span opacity={opacity}>트</Span>
+          <Span opacity={opacity}>엔</Span>
+          <Span opacity={opacity}>드</Span>
+          &nbsp; &nbsp;
+          <Span opacity={opacity}>개</Span>
+          <Span opacity={opacity}>발</Span>
+          <Span opacity={opacity}>자</Span>
+          &nbsp; &nbsp;
+          <Span opacity={opacity}>김</Span>
+          <Span opacity={opacity}>라</Span>
+          <Span opacity={opacity}>희</Span>
+          <Span opacity={opacity}>입</Span>
+          <Span opacity={opacity}>니</Span>
+          <Span opacity={opacity}>다</Span>
         </p>
       </H1>
     </Container>

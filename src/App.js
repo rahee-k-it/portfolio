@@ -1,7 +1,8 @@
 import './App.css';
 import Header from './components/Header';
 import Skills from './components/Skills';
-import Projects from './components/Projects';
+import Project1 from './components/Project1';
+import Project2 from './components/Project2';
 import AboutMe from './components/AboutMe';
 import NavBar from './components/NavBar';
 import Character from './components/Character';
@@ -14,7 +15,8 @@ function App() {
       <AboutMe></AboutMe>
       <Character></Character>
       <Skills></Skills>
-      <Projects></Projects>
+      <Project1></Project1>
+      <Project2></Project2>
     </div>
   );
 }

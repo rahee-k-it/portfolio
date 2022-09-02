@@ -11,11 +11,13 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
+  opacity: ${({ opacity }) => (opacity ? '1' : '0')};
+  transition: opacity 1s ease-in-out;
   height: 100px;
   width: 350px;
   background-color: #c23616;
   font-size: 70px;
-  font-weight: 500;
+  font-family: fantasy;
   margin: 10px;
   position: absolute;
   z-index: 1;
@@ -91,14 +93,13 @@ function AboutMe() {
     }
   }, [target]);
   return (
-    <Container>
-      <Title ref={setTarget}>About Me</Title>
-
+    <Container ref={setTarget}>
+      <Title opacity={opacity}>About Me</Title>
       <ContentBox opacity={opacity}>
         <Introduction>
-          삶에 있어 즐거운 일에 몰두하며 시간보내는 것을 가장 중요하게 생각합니다. 우연한 기회에 코딩을 접하게 되었고,
-          코드를 하나씩 배워가며 적용함에 있어 코딩의 재미를 느꼈습니다. 제가 작성한 코드가 화면에 아름답게 비추어지듯
-          코딩을 통해 미래를 그려나가는 개발자가 되고싶습니다.
+          안녕하세요. 개발이 즐거운 프론트엔드 개발자 김라희 입니다. 저는 즐거운 일에 몰두하여 시간을 보낼 때 행복을
+          느낍니다. 어려운 코드를 분석하고, 배운 코드를 적용하고, 원하는 기능을 구현할 때 코딩에 몰입하게 됩니다. 제가
+          작성한 코드가 화면에 아름답게 비추어지듯 코딩을 통해 미래를 그려나가는 개발자가 되고싶습니다.
         </Introduction>
         <PersonalInformation>
           <p>
