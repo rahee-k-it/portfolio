@@ -8,7 +8,7 @@ const Container = styled.div`
   background-size: cover;
   background-position: 50% 70%;
 
-  -webkit-font-smoothing: antialiased;
+  /* -webkit-font-smoothing: antialiased; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,8 +46,8 @@ const Span = styled.span`
     transition: opacity 1s ease-in-out;
   }
   :nth-child(5) {
-    animation-delay: 0.4s;
-    transition: opacity 4s ease-in-out;
+    animation-delay: 0.2s;
+    transition: opacity 2s ease-in-out;
   }
   :nth-child(6) {
     animation-delay: 0.3s;
@@ -62,20 +62,20 @@ const Span = styled.span`
     transition: opacity 3s ease-in-out;
   }
   :nth-child(9) {
-    animation-delay: 0.5s;
-    transition: opacity 5s ease-in-out;
+    animation-delay: 0.1s;
+    transition: opacity 1s ease-in-out;
   }
   :nth-child(10) {
-    animation-delay: 0.7s;
-    transition: opacity 7s ease-in-out;
+    animation-delay: 0.2s;
+    transition: opacity 2s ease-in-out;
   }
   :nth-child(11) {
-    animation-delay: 0.6s;
-    transition: opacity 6s ease-in-out;
+    animation-delay: 0.1s;
+    transition: opacity 1s ease-in-out;
   }
   :nth-child(12) {
-    animation-delay: 0.4s;
-    transition: opacity 4s ease-in-out;
+    animation-delay: 0.2s;
+    transition: opacity 2s ease-in-out;
   }
   :nth-child(13) {
     animation-delay: 0.2s;
@@ -84,26 +84,6 @@ const Span = styled.span`
   :nth-child(14) {
     animation-delay: 0.1s;
     transition: opacity 1s ease-in-out;
-  }
-  :nth-child(15) {
-    animation-delay: 0.1s;
-    transition: opacity 1s ease-in-out;
-  }
-  :nth-child(16) {
-    animation-delay: 0.1s;
-    transition: opacity 1s ease-in-out;
-  }
-  :nth-child(17) {
-    animation-delay: 0.1s;
-    transition: opacity 1s ease-in-out;
-  }
-  :nth-child(18) {
-    animation-delay: 0.3s;
-    transition: opacity 3s ease-in-out;
-  }
-  :nth-child(19) {
-    animation-delay: 0.2s;
-    transition: opacity 2s ease-in-out;
   }
 
   @keyframes bounce {

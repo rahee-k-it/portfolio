@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  height: 800px;
+  height: 100vh;
   width: 100%;
   background-color: #dff9fb;
   font-size: 30px;
@@ -19,7 +19,7 @@ const Title = styled.div`
   background-color: #3c40c6;
   font-size: 70px;
   font-family: fantasy;
-  margin: 10px;
+  margin: 120px 10px 10px 10px;
   position: absolute;
   z-index: 1;
 `;
@@ -34,7 +34,7 @@ const ContentBox = styled.div`
   height: 500px;
   width: 90%;
   background-color: #f1d28d;
-  margin: 5%;
+  margin: 12% 5% 0% 5%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -66,7 +66,7 @@ function Skills() {
   useEffect(() => {
     let observer;
     if (target) {
-      observer = new IntersectionObserver(handleIntersection);
+      observer = new IntersectionObserver(handleIntersection, { threshold: 0.4 });
       observer.observe(target);
     }
   }, [target]);

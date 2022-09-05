@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  height: 600px;
+  height: 100vh;
   width: 100%;
   font-size: 30px;
   position: relative;
-  padding-top: 100px;
   background-color: black;
+  /* background-color: red; */
 `;
 
 const Title = styled.div`
@@ -18,7 +18,8 @@ const Title = styled.div`
   background-color: #c23616;
   font-size: 70px;
   font-family: fantasy;
-  margin: 10px;
+  top: 130px;
+  left: 30px;
   position: absolute;
   z-index: 1;
 `;
@@ -28,7 +29,7 @@ const ContentBox = styled.div`
   border-style: solid;
   height: 500px;
   width: 90%;
-  margin: 5% 5% 0% 5%;
+  margin: 12% 5% 0% 5%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -88,7 +89,7 @@ function AboutMe() {
   useEffect(() => {
     let observer;
     if (target) {
-      observer = new IntersectionObserver(handleIntersection);
+      observer = new IntersectionObserver(handleIntersection, { threshold: 0.4 });
       observer.observe(target);
     }
   }, [target]);

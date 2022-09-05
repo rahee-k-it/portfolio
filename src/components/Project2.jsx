@@ -4,30 +4,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile, faCalendarDays, faPeopleGroup, faGear } from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.div`
-  height: 700px;
-  /* background-color: #dff9fb; */
+  height: 100vh;
   font-size: 30px;
   position: relative;
-  padding: 80px;
+  padding: 0px 80px;
   background-color: black;
-  /* background-color: azure; */
-`;
-
-const Title = styled.div`
-  height: 100px;
-  width: 230px;
-  background-color: #ffa502;
-  font-size: 70px;
-  font-family: fantasy;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 1;
+  /* background-color: #43ecec; */
 `;
 
 const FlexBox = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+  height: 100vh;
+  box-sizing: border-box;
+
+  padding-bottom: 30px;
 
   opacity: ${({ opacity }) => (opacity ? '1' : '0')};
   transition: opacity 3s ease-in-out, transform 3s ease-in-out;
@@ -41,9 +33,8 @@ const FlexBox = styled.div`
 const ContentBox = styled.div`
   border-radius: 20px;
   width: 67%;
-  background-color: #ecf0f1;
   padding: 50px 15px 15px 15px;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   background-image: url('image/gra.jpg');
   background-size: cover;
   background-position: 50% 100%;
@@ -53,8 +44,11 @@ const IntroBox = styled.div`
   height: 600px;
   width: 400px;
   text-align: start;
-  padding: 30px;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
 `;
 
 const Intro = styled.div`
@@ -90,13 +84,6 @@ const Typing = styled.div`
   }
 `;
 
-// const A = styled.div`
-//   /* background-color: pink; */
-//   height: 70px;
-//   display: flex;
-//   justify-content: center;
-// `;
-
 const Image = styled.div`
   height: 400px;
   background-image: url(${({ src }) => src});
@@ -120,7 +107,7 @@ function Project2() {
   useEffect(() => {
     let observer;
     if (target) {
-      observer = new IntersectionObserver(handleIntersection);
+      observer = new IntersectionObserver(handleIntersection, { threshold: 0.4 });
       observer.observe(target);
     }
   }, [target]);
@@ -131,7 +118,7 @@ function Project2() {
           <Wrapper>
             <Typing>Portfolio Site</Typing>
           </Wrapper>
-          <Image src='image/portfolio.png' />
+          <Image src='image/portfolioImage.png' />
         </ContentBox>
         <IntroBox>
           <Intro>

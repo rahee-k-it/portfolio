@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  height: 800px;
+  height: 100vh;
   width: 100%;
   font-size: 30px;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   background-color: black;
   /* background-color: green; */
 `;
@@ -81,7 +82,7 @@ function Character() {
   useEffect(() => {
     let observer;
     if (target) {
-      observer = new IntersectionObserver(handleIntersection);
+      observer = new IntersectionObserver(handleIntersection, { threshold: 0.4 });
       observer.observe(target);
     }
   }, [target]);

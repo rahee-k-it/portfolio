@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faRocket } from '@fortawesome/free-solid-svg-icons';
 
 const Blur = styled.div`
   height: 80px;
@@ -19,49 +19,53 @@ const Container = styled.div`
   opacity: 0.7;
   font-size: 30px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   z-index: 3;
   box-shadow: 0px 0px 20px 0px white;
 `;
 
-const ProgreBlurBar = styled.div`
-  height: 5px;
-  width: 1200px;
-  background-color: white;
-  position: absolute;
-  margin-left: 20px;
-  z-index: 5;
+const HomeBtn = styled.div`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 `;
 
-const HouseIcon = styled.div`
-  position: absolute;
+const Title = styled.div`
+  font-size: 25px;
+  color: white;
+`;
+
+const RocketIcon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /* background-color: blue; */
   color: white;
   font-size: 30px;
-  margin-left: 10px;
   &:hover {
     cursor: pointer;
   }
-  z-index: 4;
 `;
 
-const LandMark = styled.div`
+const TapBox = styled.div`
   height: 80px;
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid white; */
 `;
 
-const CircleDotIcon = styled.div`
-  position: absolute;
-  z-index: 5;
+const Tap = styled.div`
+  cursor: pointer;
+  margin-right: 50px;
   color: white;
-  font-size: 20px;
-`;
-
-const Text = styled.div`
-  color: white;
-  z-index: 6;
-  font-size: 20px;
+  font-size: 30px;
+  :hover {
+    border-bottom: 1px solid white;
+  }
 `;
 
 function NavBar() {
@@ -85,29 +89,61 @@ function NavBar() {
   return (
     <>
       <Container>
-        <HouseIcon>
-          <FontAwesomeIcon icon={faHouse} />
-        </HouseIcon>
-        <LandMark>
-          <Text style={{ marginLeft: '270px' }}>About Me</Text>
-          <CircleDotIcon>
-            <FontAwesomeIcon icon={faCircle} style={{ marginLeft: '300px' }} />
-          </CircleDotIcon>
-        </LandMark>
-        <LandMark>
-          <Text style={{ marginLeft: '585px' }}>Skills</Text>
-          <CircleDotIcon>
-            <FontAwesomeIcon icon={faCircle} style={{ marginLeft: '600px' }} />
-          </CircleDotIcon>
-        </LandMark>
-        <LandMark>
-          <Text style={{ marginLeft: '870px' }}>Projects</Text>
-          <CircleDotIcon>
-            <FontAwesomeIcon icon={faCircle} style={{ marginLeft: '900px' }} />
-          </CircleDotIcon>
-        </LandMark>
-        <ProgreBlurBar></ProgreBlurBar>
+        <HomeBtn
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth',
+            });
+          }}
+        >
+          <RocketIcon>
+            <FontAwesomeIcon icon={faRocket} />
+          </RocketIcon>
+          <Title>
+            <p style={{ height: '20px', backgroundColor: '', margin: '3px' }}>Rahee's</p>
+            <p style={{ height: '20px', backgroundColor: '', margin: '3px' }}>Portfolio</p>
+          </Title>
+        </HomeBtn>
+        <TapBox>
+          <Tap
+            style={{ backgroundColor: '' }}
+            onClick={() => {
+              window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth',
+              });
+            }}
+          >
+            About Me
+          </Tap>
+
+          <Tap
+            style={{ backgroundColor: '' }}
+            onClick={() => {
+              window.scrollTo({
+                top: window.innerHeight * 3,
+                behavior: 'smooth',
+              });
+            }}
+          >
+            Skills
+          </Tap>
+
+          <Tap
+            style={{ backgroundColor: '' }}
+            onClick={() => {
+              window.scrollTo({
+                top: window.innerHeight * 4,
+                behavior: 'smooth',
+              });
+            }}
+          >
+            Projects
+          </Tap>
+        </TapBox>
       </Container>
+
       <Blur></Blur>
     </>
   );
