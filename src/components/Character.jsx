@@ -100,7 +100,7 @@ function Character() {
           <Blur height='350px' width='500px'>
             <Text>cooperation</Text>
           </Blur>
-          <Image src='image/dance.jpg' height='350px' width='500px' />
+          <Image src='image/danceImage.jpg' height='350px' width='500px' />
         </ImageBox>
 
         <ImageBox opacity={opacity} delay='1s' translate={translate}>

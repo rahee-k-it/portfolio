@@ -6,6 +6,7 @@ import Project2 from './components/Project2';
 import AboutMe from './components/AboutMe';
 import NavBar from './components/NavBar';
 import Character from './components/Character';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Skills></Skills>
       <Project1></Project1>
       <Project2></Project2>
+      <Footer></Footer>
     </div>
   );
 }

@@ -35,6 +35,7 @@ const HomeBtn = styled.div`
 const Title = styled.div`
   font-size: 25px;
   color: white;
+  /* font-family: serif; */
 `;
 
 const RocketIcon = styled.div`
@@ -62,7 +63,7 @@ const Tap = styled.div`
   cursor: pointer;
   margin-right: 50px;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   :hover {
     border-bottom: 1px solid white;
   }
