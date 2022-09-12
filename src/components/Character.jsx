@@ -4,17 +4,16 @@ import styled from 'styled-components';
 const Container = styled.div`
   height: 100vh;
   width: 100%;
-  font-size: 30px;
+  font-size: 3px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   background-color: black;
-  /* background-color: green; */
 `;
 
 const ContentBox = styled.div`
   background-color: black;
-  height: 700px;
+  height: 17px;
   width: 90%;
   display: flex;
   justify-content: space-between;
@@ -23,12 +22,12 @@ const ContentBox = styled.div`
 
 const ImageBox = styled.div`
   position: relative;
-  opacity: ${({ opacity }) => (opacity ? '1' : '0')};
+  opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   transition: opacity 3s ease-in-out, transform 3s ease-in-out;
   transition-delay: ${({ delay = 0 }) => delay};
   transform: translate(
-    ${({ translate }) => (translate ? '0px' : '100px')},
-    ${({ translate }) => (translate ? '0px' : '100px')}
+    ${({ isMoved }) => (isMoved ? '0px' : '100px')},
+    ${({ isMoved }) => (isMoved ? '0px' : '100px')}
   );
 `;
 
@@ -61,7 +60,7 @@ const Blur = styled.div`
 
 const Text = styled.div`
   color: white;
-  font-size: 70px;
+  font-size: 50px;
   text-shadow: 3px 3px 3px #000;
   z-index: 2;
 `;
@@ -75,7 +74,6 @@ function Character() {
       console.log('intersecting 캐릳터');
       setOpacity(1);
       setTranslate(true);
-      // observer.unObserve(entry.target)
       observer.disconnect();
     }
   };
@@ -89,25 +87,25 @@ function Character() {
   return (
     <Container ref={setTarget}>
       <ContentBox>
-        <ImageBox opacity={opacity} translate={translate}>
-          <Blur height='600px' width='350px'>
+        <ImageBox isShowing={opacity} isMoved={translate}>
+          <Blur height='500px' width='300px'>
             <Text>Challenge</Text>
           </Blur>
-          <Image src='image/climbing.jpg' height='600px' width='350px' />
+          <Image src='image/climbing.jpg' height='500px' width='300px' />
         </ImageBox>
 
-        <ImageBox opacity={opacity} delay='.5s' translate={translate}>
-          <Blur height='350px' width='500px'>
+        <ImageBox isShowing={opacity} delay='.3s' isMoved={translate}>
+          <Blur height='300px' width='400px'>
             <Text>cooperation</Text>
           </Blur>
-          <Image src='image/danceImage.jpg' height='350px' width='500px' />
+          <Image src='image/dance.jpg' height='300px' width='400px' />
         </ImageBox>
 
-        <ImageBox opacity={opacity} delay='1s' translate={translate}>
-          <Blur height='450px' width='450px'>
+        <ImageBox isShowing={opacity} delay='.5s' isMoved={translate}>
+          <Blur height='400px' width='400px'>
             <Text>Positive</Text>
           </Blur>
-          <Image src='image/positive.jpg' height='450px' width='450px' />
+          <Image src='image/positive.jpg' height='400px' width='400px' />
         </ImageBox>
       </ContentBox>
     </Container>

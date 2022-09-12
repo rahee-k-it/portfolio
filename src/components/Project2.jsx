@@ -1,94 +1,87 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFile, faCalendarDays, faPeopleGroup, faGear } from '@fortawesome/free-solid-svg-icons';
+import { faFile, faCalendarDays, faGear, faLink, faUser } from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.div`
   height: 100vh;
-  font-size: 30px;
+  width: 100%;
   position: relative;
-  padding: 0px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: black;
-  /* background-color: #43ecec; */
+  background-color: black;
 `;
 
 const FlexBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 100vh;
-  box-sizing: border-box;
-
-  padding-bottom: 30px;
-
-  opacity: ${({ opacity }) => (opacity ? '1' : '0')};
+  height: 30em;
+  width: 80%;
+  margin: 9% 0% 0% 0%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   transition: opacity 3s ease-in-out, transform 3s ease-in-out;
   transition-delay: ${({ delay = 0 }) => delay};
-  transform: translate(
-    ${({ translate }) => (translate ? '0px' : '200px')},
-    ${({ translate }) => (translate ? '0px' : '0px')}
-  );
+  transform: translate(${({ isMoved }) => (isMoved ? '0px' : '200px')}, ${({ isMoved }) => (isMoved ? '0px' : '0px')});
 `;
 
 const ContentBox = styled.div`
   border-radius: 20px;
-  width: 67%;
+  height: 27em;
+  width: 70%;
   padding: 50px 15px 15px 15px;
-  /* margin-bottom: 50px; */
-  background-image: url('image/gra.jpg');
+  background-image: url('image/whiteWave.jpg');
   background-size: cover;
-  background-position: 50% 100%;
+`;
+
+const ContentTitle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  margin-bottom: 30px;
 `;
 
 const IntroBox = styled.div`
-  height: 600px;
-  width: 400px;
+  height: 25em;
+  width: 30%;
+  padding: 50px 15px 15px 15px;
   text-align: start;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 10px;
+  background-color: #000000;
 `;
 
 const Intro = styled.div`
+  line-height: 1.5;
+  font-size: 1.5em;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-`;
-
-const Wrapper = styled.div`
-  height: 70px;
-  display: grid;
-  place-items: center;
-`;
-
-const Typing = styled.div`
-  width: 10ch;
-  animation: typing 2s steps(10), blink 0.3s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-  font-size: 2em;
-
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-  }
-
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
-  }
+  margin-bottom: 20px;
 `;
 
 const Image = styled.div`
-  height: 400px;
+  height: 23em;
   background-image: url(${({ src }) => src});
   background-size: cover;
   box-shadow: 5px 5px 5px 5px gray;
+`;
+
+const GitHubLink = styled.a`
+  color: white;
+  text-decoration: none;
+  :hover {
+    color: orange;
+  }
 `;
 
 function Project2() {
@@ -100,7 +93,6 @@ function Project2() {
       console.log('intersecting 캐릳터');
       setOpacity(1);
       setTranslate(true);
-      // observer.unObserve(entry.target)
       observer.disconnect();
     }
   };
@@ -113,29 +105,33 @@ function Project2() {
   }, [target]);
   return (
     <Container ref={setTarget}>
-      <FlexBox opacity={opacity} translate={translate}>
+      <FlexBox isShowing={opacity} isMoved={translate}>
         <ContentBox>
-          <Wrapper>
-            <Typing>Portfolio Site</Typing>
-          </Wrapper>
+          <ContentTitle>Portfolio Site</ContentTitle>
           <Image src='image/portfolioImage.png' />
         </ContentBox>
         <IntroBox>
           <Intro>
-            <FontAwesomeIcon icon={faFile} />
-            <p>프로젝트명: Portfolio</p>
+            <FontAwesomeIcon icon={faFile} style={{ marginRight: '20px' }} />
+            <p>프로젝트명: Portfolio Site</p>
           </Intro>
           <Intro>
-            <FontAwesomeIcon icon={faCalendarDays} />
-            <p>일정: 2022.08.29~</p>
+            <FontAwesomeIcon icon={faCalendarDays} style={{ marginRight: '20px' }} />
+            <p>일정: 2022.08.30~</p>
           </Intro>
           <Intro>
-            <FontAwesomeIcon icon={faPeopleGroup} />
+            <FontAwesomeIcon icon={faUser} style={{ marginRight: '20px' }} />
             <p>개인 프로젝트</p>
           </Intro>
+          <Intro style={{ alignItems: 'flex-start' }}>
+            <FontAwesomeIcon icon={faGear} style={{ margin: '10px 20px 0px 0px' }} />
+            <p>React로 구현한 포트폴리오 사이트</p>
+          </Intro>
           <Intro>
-            <FontAwesomeIcon icon={faGear} />
-            <p>react를 사용하여 UI component를 만듦</p>
+            <FontAwesomeIcon icon={faLink} style={{ marginRight: '20px' }} />
+            <GitHubLink href='https://github.com/rahee-k-it/react-ui-storybook' target='_blank'>
+              GitHub 이동하기
+            </GitHubLink>
           </Intro>
         </IntroBox>
       </FlexBox>

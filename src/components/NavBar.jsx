@@ -4,20 +4,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRocket } from '@fortawesome/free-solid-svg-icons';
 
 const Blur = styled.div`
-  height: 80px;
+  height: 50px;
   width: 100%;
   position: absolute;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   position: fixed;
   z-index: 2;
 `;
 
 const Container = styled.div`
-  height: 80px;
+  height: 50px;
   width: 100%;
   background-color: black;
   opacity: 0.7;
-  font-size: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,15 +26,19 @@ const Container = styled.div`
 `;
 
 const HomeBtn = styled.div`
-  cursor: pointer;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  :hover {
+    cursor: pointer;
+    background: linear-gradient(to right, #a55eea, #2d98da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 `;
 
 const Title = styled.div`
-  font-size: 25px;
+  font-size: 20px;
   color: white;
-  /* font-family: serif; */
 `;
 
 const RocketIcon = styled.div`
@@ -43,29 +46,26 @@ const RocketIcon = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  /* background-color: blue; */
   color: white;
-  font-size: 30px;
-  &:hover {
-    cursor: pointer;
-  }
+  font-size: 20px;
 `;
 
 const TapBox = styled.div`
-  height: 80px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid white; */
 `;
 
 const Tap = styled.div`
-  cursor: pointer;
   margin-right: 50px;
   color: white;
   font-size: 20px;
   :hover {
-    border-bottom: 1px solid white;
+    cursor: pointer;
+    background: linear-gradient(to right, #a55eea, #2d98da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 `;
 
@@ -102,8 +102,8 @@ function NavBar() {
             <FontAwesomeIcon icon={faRocket} />
           </RocketIcon>
           <Title>
-            <p style={{ height: '20px', backgroundColor: '', margin: '3px' }}>Rahee's</p>
-            <p style={{ height: '20px', backgroundColor: '', margin: '3px' }}>Portfolio</p>
+            <p>Rahee's</p>
+            <p>Portfolio</p>
           </Title>
         </HomeBtn>
         <TapBox>

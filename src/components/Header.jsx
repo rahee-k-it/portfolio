@@ -4,24 +4,23 @@ import styled from 'styled-components';
 const Container = styled.div`
   height: 100vh;
   width: 100%;
-  background-image: url('image/dot3.jpg');
+  background-image: url('image/dot.jpg');
   background-size: cover;
   background-position: 50% 70%;
-
-  /* -webkit-font-smoothing: antialiased; */
+  -webkit-font-smoothing: antialiased;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const H1 = styled.h1`
-  height: 300px;
+  height: 100px;
 `;
 
 const Span = styled.span`
   font-size: 60px;
-  font-weight: 900;
-  opacity: ${({ opacity }) => (opacity ? '1' : '0')};
+  font-weight: 500;
+  opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   position: relative;
   top: 2px;
   animation: bounce 0.5s ease infinite alternate;
@@ -102,7 +101,6 @@ function Header() {
     if (entry.isIntersecting) {
       console.log('intersecting');
       setOpacity(1);
-      // observer.unObserve(entry.target)
       observer.disconnect();
     }
   };
@@ -116,30 +114,30 @@ function Header() {
   return (
     <Container ref={setTarget}>
       <H1>
-        <p>
-          <Span opacity={opacity}>반</Span>
-          <Span opacity={opacity}>갑</Span>
-          <Span opacity={opacity}>습</Span>
-          <Span opacity={opacity}>니</Span>
-          <Span opacity={opacity}>다</Span>
+        <p style={{ marginBottom: '30px', display: 'flex', justifyContent: 'center' }}>
+          <Span isShowing={opacity}>반</Span>
+          <Span isShowing={opacity}>갑</Span>
+          <Span isShowing={opacity}>습</Span>
+          <Span isShowing={opacity}>니</Span>
+          <Span isShowing={opacity}>다</Span>
         </p>
         <p>
-          <Span opacity={opacity}>프</Span>
-          <Span opacity={opacity}>론</Span>
-          <Span opacity={opacity}>트</Span>
-          <Span opacity={opacity}>엔</Span>
-          <Span opacity={opacity}>드</Span>
-          &nbsp; &nbsp;
-          <Span opacity={opacity}>개</Span>
-          <Span opacity={opacity}>발</Span>
-          <Span opacity={opacity}>자</Span>
-          &nbsp; &nbsp;
-          <Span opacity={opacity}>김</Span>
-          <Span opacity={opacity}>라</Span>
-          <Span opacity={opacity}>희</Span>
-          <Span opacity={opacity}>입</Span>
-          <Span opacity={opacity}>니</Span>
-          <Span opacity={opacity}>다</Span>
+          <Span isShowing={opacity}>프</Span>
+          <Span isShowing={opacity}>론</Span>
+          <Span isShowing={opacity}>트</Span>
+          <Span isShowing={opacity}>엔</Span>
+          <Span isShowing={opacity}>드</Span>
+          &nbsp; &nbsp; &nbsp;
+          <Span isShowing={opacity}>개</Span>
+          <Span isShowing={opacity}>발</Span>
+          <Span isShowing={opacity}>자</Span>
+          &nbsp; &nbsp; &nbsp;
+          <Span isShowing={opacity}>김</Span>
+          <Span isShowing={opacity}>라</Span>
+          <Span isShowing={opacity}>희</Span>
+          <Span isShowing={opacity}>입</Span>
+          <Span isShowing={opacity}>니</Span>
+          <Span isShowing={opacity}>다</Span>
         </p>
       </H1>
     </Container>

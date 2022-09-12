@@ -4,47 +4,49 @@ import styled from 'styled-components';
 const Container = styled.div`
   height: 100vh;
   width: 100%;
-  background-color: #dff9fb;
-  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   background-color: black;
-  /* background-color: pink; */
 `;
 
 const Title = styled.div`
-  opacity: ${({ opacity }) => (opacity ? '1' : '0')};
-  transition: opacity 2s ease-in-out;
-  height: 100px;
-  width: 200px;
-  background-color: #3c40c6;
-  font-size: 70px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
+  transition: opacity 1s ease-in-out;
+  height: 2em;
+  width: 4em;
+  background-color: #912c15;
+  font-size: 3em;
   font-family: fantasy;
-  margin: 120px 10px 10px 10px;
+  top: 20%;
+  left: 5%;
   position: absolute;
   z-index: 1;
 `;
 
 const ContentBox = styled.div`
-  opacity: ${({ opacity }) => (opacity ? '1' : '0')};
+  opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   transition: opacity 3s ease-in-out;
-  background-image: url('image/white2.jpg');
-  background-size: cover;
-  background-position: 30% 20%;
   border-radius: 0px;
-  height: 500px;
-  width: 90%;
-  background-color: #f1d28d;
-  margin: 12% 5% 0% 5%;
+  height: 28em;
+  width: 80%;
+  background-color: #ffffff;
+  margin: 5% 0% 0% 0%;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: inset 0px 0px 35px 5px wheat;
+  box-shadow: inset 0px 0px 35px 5px white;
 `;
 
 const Image = styled.div`
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(${({ src }) => src});
@@ -59,7 +61,6 @@ function Skills() {
     if (entry.isIntersecting) {
       console.log('intersecting');
       setOpacity(1);
-      // observer.unObserve(entry.target)
       observer.disconnect();
     }
   };
@@ -72,12 +73,13 @@ function Skills() {
   }, [target]);
   return (
     <Container ref={setTarget}>
-      <Title opacity={opacity}>Skills</Title>
-      <ContentBox opacity={opacity}>
+      <Title isShowing={opacity}>Skills</Title>
+      <ContentBox isShowing={opacity}>
         <Image src='image/html.svg' />
         <Image src='image/css.svg' />
         <Image src='image/js.png' />
         <Image src='image/react.png' />
+        <Image src='image/storybookLogo.png' />
       </ContentBox>
     </Container>
   );

@@ -1,4 +1,5 @@
-import './App.css';
+import './styles/reset.css';
+import './styles/main.css';
 import Header from './components/Header';
 import Skills from './components/Skills';
 import Project1 from './components/Project1';

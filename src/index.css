@@ -1,9 +1,9 @@
-@font-face {
+/* @font-face {
   font-family: 'NanumBarunpen';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 @font-face {
   font-family: 'BMDOHYEON';
@@ -12,8 +12,7 @@
   font-style: normal;
 }
 
-body {
-  margin: 0;
+* {
   font-family: 'BMDOHYEON', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
