@@ -19,10 +19,9 @@ const Title = styled.div`
   opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   transition: opacity 1s ease-in-out;
   height: 2em;
-  width: 4em;
+  width: 5em;
   background-color: #912c15;
   font-size: 3em;
-  font-family: fantasy;
   top: 20%;
   left: 5%;
   position: absolute;
@@ -75,11 +74,11 @@ function Skills() {
     <Container ref={setTarget}>
       <Title isShowing={opacity}>Skills</Title>
       <ContentBox isShowing={opacity}>
-        <Image src='image/html.svg' />
-        <Image src='image/css.svg' />
-        <Image src='image/js.png' />
-        <Image src='image/react.png' />
-        <Image src='image/storybookLogo.png' />
+        <Image src='portfolio/image/html.svg' />
+        <Image src='portfolio/image/css.svg' />
+        <Image src='portfolio/image/js.png' />
+        <Image src='portfolio/image/react.png' />
+        <Image src='portfolio/image/storybookLogo.png' />
       </ContentBox>
     </Container>
   );

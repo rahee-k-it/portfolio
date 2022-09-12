@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   height: 100vh;
   width: 100%;
-  background-image: url('image/dot.jpg');
+  background-image: url('portfolio/image/dot.jpg');
   background-size: cover;
   background-position: 50% 70%;
   -webkit-font-smoothing: antialiased;

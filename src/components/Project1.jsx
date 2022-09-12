@@ -19,10 +19,9 @@ const Title = styled.div`
   justify-content: center;
   align-items: center;
   height: 2em;
-  width: 4em;
+  width: 5em;
   background-color: #912c15;
   font-size: 3em;
-  font-family: fantasy;
   position: absolute;
   top: 20%;
   left: 5%;
@@ -56,7 +55,7 @@ const ContentBox = styled.div`
   height: 27em;
   width: 70%;
   padding: 50px 15px 15px 15px;
-  background-image: url('image/whiteWave.jpg');
+  background-image: url('portfolio/image/whiteWave.jpg');
   background-size: cover;
 `;
 
@@ -132,7 +131,7 @@ function Project1() {
         <ContentBox>
           <ContentTitle>u-react-ui</ContentTitle>
 
-          <Image src='image/storybook.png' />
+          <Image src='portfolio/image/storybook.png' />
         </ContentBox>
         <IntroBox>
           <Intro>

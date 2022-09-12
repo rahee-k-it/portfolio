@@ -19,10 +19,9 @@ const Title = styled.div`
   opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   transition: opacity 1s ease-in-out;
   height: 2em;
-  width: 4em;
+  width: 5em;
   background-color: #912c15;
   font-size: 3em;
-  font-family: fantasy;
   top: 20%;
   left: 5%;
   position: absolute;
