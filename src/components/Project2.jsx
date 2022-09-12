@@ -36,7 +36,7 @@ const ContentBox = styled.div`
   height: 27em;
   width: 70%;
   padding: 50px 15px 15px 15px;
-  background-image: url('portfolio/image/whiteWave.jpg');
+  background-image: url('image/whiteWave.jpg');
   background-size: cover;
 `;
 
@@ -108,7 +108,7 @@ function Project2() {
       <FlexBox isShowing={opacity} isMoved={translate}>
         <ContentBox>
           <ContentTitle>Portfolio Site</ContentTitle>
-          <Image src='portfolio/image/portfolioImage.png' />
+          <Image src='image/portfolioImage.png' />
         </ContentBox>
         <IntroBox>
           <Intro>

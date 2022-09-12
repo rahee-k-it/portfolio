@@ -74,11 +74,11 @@ function Skills() {
     <Container ref={setTarget}>
       <Title isShowing={opacity}>Skills</Title>
       <ContentBox isShowing={opacity}>
-        <Image src='portfolio/image/html.svg' />
-        <Image src='portfolio/image/css.svg' />
-        <Image src='portfolio/image/js.png' />
-        <Image src='portfolio/image/react.png' />
-        <Image src='portfolio/image/storybookLogo.png' />
+        <Image src='image/html.svg' />
+        <Image src='image/css.svg' />
+        <Image src='image/js.png' />
+        <Image src='image/react.png' />
+        <Image src='image/storybookLogo.png' />
       </ContentBox>
     </Container>
   );

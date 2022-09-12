@@ -91,21 +91,21 @@ function Character() {
           <Blur height='500px' width='300px'>
             <Text>Challenge</Text>
           </Blur>
-          <Image src='portfolio/image/climbing.jpg' height='500px' width='300px' />
+          <Image src='image/climbing.jpg' height='500px' width='300px' />
         </ImageBox>
 
         <ImageBox isShowing={opacity} delay='.3s' isMoved={translate}>
           <Blur height='300px' width='400px'>
             <Text>cooperation</Text>
           </Blur>
-          <Image src='portfolio/image/dance.jpg' height='300px' width='400px' />
+          <Image src='image/dance.jpg' height='300px' width='400px' />
         </ImageBox>
 
         <ImageBox isShowing={opacity} delay='.5s' isMoved={translate}>
           <Blur height='400px' width='400px'>
             <Text>Positive</Text>
           </Blur>
-          <Image src='portfolio/image/positive.jpg' height='400px' width='400px' />
+          <Image src='image/positive.jpg' height='400px' width='400px' />
         </ImageBox>
       </ContentBox>
     </Container>

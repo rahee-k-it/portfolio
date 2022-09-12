@@ -55,7 +55,7 @@ const ContentBox = styled.div`
   height: 27em;
   width: 70%;
   padding: 50px 15px 15px 15px;
-  background-image: url('portfolio/image/whiteWave.jpg');
+  background-image: url('image/whiteWave.jpg');
   background-size: cover;
 `;
 
@@ -131,7 +131,7 @@ function Project1() {
         <ContentBox>
           <ContentTitle>u-react-ui</ContentTitle>
 
-          <Image src='portfolio/image/storybook.png' />
+          <Image src='image/storybook.png' />
         </ContentBox>
         <IntroBox>
           <Intro>
