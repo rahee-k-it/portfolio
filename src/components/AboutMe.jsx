@@ -20,6 +20,7 @@ const Title = styled.div`
   transition: opacity 1s ease-in-out;
   height: 2em;
   width: 5em;
+  font-weight: 900;
   background-color: #912c15;
   font-size: 3em;
   top: 20%;

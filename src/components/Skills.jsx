@@ -12,6 +12,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
+  font-weight: 900;
   border-radius: 10px;
   display: flex;
   justify-content: center;
