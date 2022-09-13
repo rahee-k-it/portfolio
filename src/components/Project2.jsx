@@ -129,7 +129,7 @@ function Project2() {
           </Intro>
           <Intro>
             <FontAwesomeIcon icon={faLink} style={{ marginRight: '20px' }} />
-            <GitHubLink href='https://github.com/rahee-k-it/react-ui-storybook' target='_blank'>
+            <GitHubLink href='https://github.com/rahee-k-it/portfolio' target='_blank'>
               GitHub 이동하기
             </GitHubLink>
           </Intro>
