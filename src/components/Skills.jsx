@@ -19,12 +19,12 @@ const Title = styled.div`
   align-items: center;
   opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   transition: opacity 1s ease-in-out;
-  height: 2em;
-  width: 5em;
+  height: 80px;
+  width: 250px;
   background-color: #912c15;
-  font-size: 3em;
-  top: 20%;
-  left: 5%;
+  font-size: 50px;
+  top: 150px;
+  left: 50px;
   position: absolute;
   z-index: 1;
 `;
@@ -33,15 +33,15 @@ const ContentBox = styled.div`
   opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   transition: opacity 3s ease-in-out;
   border-radius: 0px;
-  height: 28em;
-  width: 80%;
+  height: 400px;
+  width: 1100px;
   background-color: #ffffff;
-  margin: 5% 0% 0% 0%;
+  margin: 60px 0px 0px 0px;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: inset 0px 0px 35px 5px white;
+  box-shadow: inset 0px 0px 35px 5px gray;
 `;
 
 const Image = styled.div`

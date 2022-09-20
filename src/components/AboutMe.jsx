@@ -18,13 +18,13 @@ const Title = styled.div`
   align-items: center;
   opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   transition: opacity 1s ease-in-out;
-  height: 2em;
-  width: 5em;
+  height: 80px;
+  width: 250px;
   font-weight: 900;
   background-color: #912c15;
-  font-size: 3em;
-  top: 20%;
-  left: 5%;
+  font-size: 50px;
+  top: 150px;
+  left: 50px;
   position: absolute;
   z-index: 1;
 `;
@@ -32,9 +32,9 @@ const Title = styled.div`
 const ContentBox = styled.div`
   border-width: 3px 3px 3px 3px;
   border-style: solid;
-  height: 28em;
-  width: 80%;
-  margin: 5% 0% 0% 0%;
+  height: 400px;
+  width: 1100px;
+  margin: 60px 0px 0px 0px;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -51,23 +51,25 @@ const Introduction = styled.div`
   justify-content: center;
   align-items: center;
   line-height: 1.5;
-  height: 80%;
-  width: 50%;
+  height: 300px;
+  width: 600px;
   padding: 0px 5px;
   text-align: start;
   font-size: 25px;
+  /* background-color: aquamarine; */
 `;
 
 const PersonalInformation = styled.div`
   line-height: 2;
-  height: 80%;
-  width: 50%;
+  height: 300px;
+  width: 500px;
   text-align: start;
   padding-left: 100px;
   font-size: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* background-color: aquamarine; */
 `;
 
 const BoldText = styled.span`

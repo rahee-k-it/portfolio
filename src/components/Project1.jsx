@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile, faCalendarDays, faPeopleGroup, faGear, faLink } from '@fortawesome/free-solid-svg-icons';
+import Carousel from './carousel/Carousel';
+import CarouselItem from './carousel/CarouselItem';
 
 const Container = styled.div`
   height: 100vh;
@@ -12,20 +14,19 @@ const Container = styled.div`
   align-items: center;
   background-color: black;
 `;
-
 const Title = styled.div`
   font-weight: 900;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2em;
-  width: 5em;
+  height: 80px;
+  width: 250px;
   background-color: #912c15;
-  font-size: 3em;
+  font-size: 50px;
   position: absolute;
-  top: 20%;
-  left: 5%;
+  top: 150px;
+  left: 50px;
   position: absolute;
   z-index: 1;
   opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
@@ -33,14 +34,14 @@ const Title = styled.div`
   transition-delay: ${({ delay = 0 }) => delay};
   transform: translate(${({ isMoved }) => (isMoved ? '0px' : '200px')}, ${({ isMoved }) => (isMoved ? '0px' : '0px')});
 `;
-
 const FlexBox = styled.div`
+  /* background-color: aliceblue; */
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 30em;
-  width: 80%;
-  margin: 9% 0% 0% 0%;
+  height: 500px;
+  width: 1300px;
+  margin: 150px 0px 0px 0px;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -50,27 +51,28 @@ const FlexBox = styled.div`
   transition-delay: ${({ delay = 0 }) => delay};
   transform: translate(${({ isMoved }) => (isMoved ? '0px' : '200px')}, ${({ isMoved }) => (isMoved ? '0px' : '0px')});
 `;
-
 const ContentBox = styled.div`
   border-radius: 20px;
-  height: 27em;
-  width: 70%;
-  padding: 50px 15px 15px 15px;
+  height: 450px;
+  width: 750px;
+  padding: 20px 15px 10px 15px;
   background-image: url('image/whiteWave.jpg');
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
-
 const ContentTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2em;
+  font-size: 35px;
   margin-bottom: 30px;
 `;
-
 const IntroBox = styled.div`
-  height: 25em;
-  width: 30%;
+  height: 400px;
+  width: 400px;
   padding: 50px 15px 15px 15px;
   text-align: start;
   color: white;
@@ -79,23 +81,21 @@ const IntroBox = styled.div`
   justify-content: center;
   background-color: #000000;
 `;
-
 const Intro = styled.div`
   line-height: 1.5;
-  font-size: 1.5em;
+  font-size: 25px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 20px;
 `;
-
-const Image = styled.div`
-  height: 23em;
-  background-image: url(${({ src }) => src});
+const ItemImg = styled.div`
+  overflow: hidden;
   background-size: cover;
-  box-shadow: 5px 5px 5px 5px gray;
+  background-image: url(${({ imgSrc }) => imgSrc});
+  width: 100%;
+  height: 350px;
 `;
-
 const GitHubLink = styled.a`
   color: white;
   text-decoration: none;
@@ -131,8 +131,23 @@ function Project1() {
       <FlexBox isShowing={opacity} isMoved={translate}>
         <ContentBox>
           <ContentTitle>u-react-ui</ContentTitle>
-
-          <Image src='image/storybook.png' />
+          <Carousel>
+            {[
+              'image/project1/project1Image1.png',
+              'image/project1/project1Image2.png',
+              'image/project1/project1Image3.png',
+              'image/project1/project1Image4.png',
+              'image/project1/project1Image5.png',
+              'image/project1/project1Image6.png',
+            ].map((imgSrc, i) => {
+              return (
+                <CarouselItem key={i}>
+                  <ItemImg imgSrc={imgSrc} />
+                </CarouselItem>
+              );
+            })}
+          </Carousel>
+          {/* <Image src='image/storybook.png' /> */}
         </ContentBox>
         <IntroBox>
           <Intro>

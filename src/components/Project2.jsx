@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFile, faCalendarDays, faGear, faLink, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faFile, faCalendarDays, faUser, faGear, faLink } from '@fortawesome/free-solid-svg-icons';
+import CarouselProject1 from '../components/carousel/CarouselProject1';
+import Carousel from './carousel/Carousel';
+import CarouselItem from './carousel/CarouselItem';
 
 const Container = styled.div`
   height: 100vh;
@@ -11,16 +14,16 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: black;
-  background-color: black;
 `;
 
 const FlexBox = styled.div`
+  /* background-color: aliceblue; */
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 30em;
-  width: 80%;
-  margin: 9% 0% 0% 0%;
+  height: 500px;
+  width: 1300px;
+  margin: 150px 0px 0px 0px;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -33,24 +36,28 @@ const FlexBox = styled.div`
 
 const ContentBox = styled.div`
   border-radius: 20px;
-  height: 27em;
-  width: 70%;
-  padding: 50px 15px 15px 15px;
+  height: 450px;
+  width: 750px;
+  padding: 20px 15px 10px 15px;
   background-image: url('image/whiteWave.jpg');
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const ContentTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2em;
+  font-size: 35px;
   margin-bottom: 30px;
 `;
 
 const IntroBox = styled.div`
-  height: 25em;
-  width: 30%;
+  height: 400px;
+  width: 400px;
   padding: 50px 15px 15px 15px;
   text-align: start;
   color: white;
@@ -62,19 +69,27 @@ const IntroBox = styled.div`
 
 const Intro = styled.div`
   line-height: 1.5;
-  font-size: 1.5em;
+  font-size: 25px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 20px;
 `;
 
-const Image = styled.div`
-  height: 23em;
-  background-image: url(${({ src }) => src});
+const ItemImg = styled.div`
+  overflow: hidden;
   background-size: cover;
-  box-shadow: 5px 5px 5px 5px gray;
+  background-image: url(${({ imgSrc }) => imgSrc});
+  width: 100%;
+  height: 350px;
 `;
+
+// const Image = styled.div`
+//   height: 23em;
+//   background-image: url(${({ src }) => src});
+//   background-size: cover;
+//   box-shadow: 5px 5px 5px 5px gray;
+// `;
 
 const GitHubLink = styled.a`
   color: white;
@@ -108,7 +123,23 @@ function Project2() {
       <FlexBox isShowing={opacity} isMoved={translate}>
         <ContentBox>
           <ContentTitle>Portfolio Site</ContentTitle>
-          <Image src='image/portfolioImage.png' />
+          <Carousel>
+            {[
+              'image/project2/project2Image1.png',
+              'image/project2/project2Image2.png',
+              'image/project2/project2Image3.png',
+              'image/project2/project2Image4.png',
+              'image/project2/project2Image5.png',
+              'image/project2/project2Image6.png',
+            ].map((imgSrc, i) => {
+              return (
+                <CarouselItem key={i}>
+                  <ItemImg imgSrc={imgSrc} />
+                </CarouselItem>
+              );
+            })}
+          </Carousel>
+          {/* <Image src='image/portfolioImage.png' /> */}
         </ContentBox>
         <IntroBox>
           <Intro>
