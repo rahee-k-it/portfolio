@@ -99,7 +99,6 @@ function Header() {
   const [opacity, setOpacity] = useState(false);
   const handleIntersection = ([entry], observer) => {
     if (entry.isIntersecting) {
-      console.log('intersecting');
       setOpacity(1);
       observer.disconnect();
     }

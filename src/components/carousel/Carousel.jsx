@@ -31,6 +31,7 @@ const CarouselItemsWrapper = styled.div`
   transform: translateX(${({ translateXAmount }) => `${translateXAmount}px`});
   transition: transform 0.7s ease-in-out;
 `;
+
 const Button = styled.button`
   opacity: 0.2;
   transition: opacity 0.4s ease-in-out;
@@ -42,7 +43,7 @@ const Button = styled.button`
     opacity: 0.75;
   }
 `;
-// autoPlay = true 였는데 false로 바꿈
+
 function Carousel({ autoPlay = true, autoPlayDuration = 2000, children, className, itemWidth = 700, ...others }) {
   const [translateXAmount, setTranslateXAmount] = useState(0);
   const itemCount = Children.toArray(children).length;

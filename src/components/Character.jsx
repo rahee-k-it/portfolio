@@ -71,7 +71,6 @@ function Character() {
   const [translate, setTranslate] = useState(false);
   const handleIntersection = ([entry], observer) => {
     if (entry.isIntersecting) {
-      console.log('intersecting 캐릳터');
       setOpacity(1);
       setTranslate(true);
       observer.disconnect();

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile, faCalendarDays, faUser, faGear, faLink } from '@fortawesome/free-solid-svg-icons';
-import CarouselProject1 from '../components/carousel/CarouselProject1';
 import Carousel from './carousel/Carousel';
 import CarouselItem from './carousel/CarouselItem';
 
@@ -17,7 +16,6 @@ const Container = styled.div`
 `;
 
 const FlexBox = styled.div`
-  /* background-color: aliceblue; */
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -84,13 +82,6 @@ const ItemImg = styled.div`
   height: 350px;
 `;
 
-// const Image = styled.div`
-//   height: 23em;
-//   background-image: url(${({ src }) => src});
-//   background-size: cover;
-//   box-shadow: 5px 5px 5px 5px gray;
-// `;
-
 const GitHubLink = styled.a`
   color: white;
   text-decoration: none;
@@ -105,7 +96,6 @@ function Project2() {
   const [translate, setTranslate] = useState(false);
   const handleIntersection = ([entry], observer) => {
     if (entry.isIntersecting) {
-      console.log('intersecting 캐릳터');
       setOpacity(1);
       setTranslate(true);
       observer.disconnect();
@@ -139,7 +129,6 @@ function Project2() {
               );
             })}
           </Carousel>
-          {/* <Image src='image/portfolioImage.png' /> */}
         </ContentBox>
         <IntroBox>
           <Intro>

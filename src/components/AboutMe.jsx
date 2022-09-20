@@ -56,7 +56,11 @@ const Introduction = styled.div`
   padding: 0px 5px;
   text-align: start;
   font-size: 25px;
-  /* background-color: aquamarine; */
+  :hover {
+    background: linear-gradient(to right, #a55eea, #2d98da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 `;
 
 const PersonalInformation = styled.div`
@@ -69,7 +73,11 @@ const PersonalInformation = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: aquamarine; */
+  :hover {
+    background: linear-gradient(to right, #a55eea, #2d98da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 `;
 
 const BoldText = styled.span`
@@ -81,7 +89,6 @@ function AboutMe() {
   const [opacity, setOpacity] = useState(false);
   const handleIntersection = ([entry], observer) => {
     if (entry.isIntersecting) {
-      console.log('intersecting');
       setOpacity(1);
       observer.disconnect();
     }

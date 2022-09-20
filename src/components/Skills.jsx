@@ -52,6 +52,11 @@ const Image = styled.div`
   background-image: url(${({ src }) => src});
   background-position: center;
   margin: 30px;
+  transition: 0.1s linear;
+  :hover {
+    height: 160px;
+    width: 160px;
+  }
 `;
 
 function Skills() {
@@ -59,7 +64,6 @@ function Skills() {
   const [opacity, setOpacity] = useState(false);
   const handleIntersection = ([entry], observer) => {
     if (entry.isIntersecting) {
-      console.log('intersecting');
       setOpacity(1);
       observer.disconnect();
     }

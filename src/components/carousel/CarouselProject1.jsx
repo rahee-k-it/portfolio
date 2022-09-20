@@ -3,7 +3,6 @@ import CarouselItem from './CarouselItem';
 import styled from 'styled-components';
 
 const ItemImg = styled.div`
-  /* background-position: center; */
   overflow: hidden;
   background-size: cover;
   background-image: url(${({ imgSrc }) => imgSrc});

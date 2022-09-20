@@ -35,7 +35,6 @@ const Title = styled.div`
   transform: translate(${({ isMoved }) => (isMoved ? '0px' : '200px')}, ${({ isMoved }) => (isMoved ? '0px' : '0px')});
 `;
 const FlexBox = styled.div`
-  /* background-color: aliceblue; */
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -110,7 +109,6 @@ function Project1() {
   const [translate, setTranslate] = useState(false);
   const handleIntersection = ([entry], observer) => {
     if (entry.isIntersecting) {
-      console.log('intersecting 캐릳터');
       setOpacity(1);
       setTranslate(true);
       observer.disconnect();
@@ -147,7 +145,6 @@ function Project1() {
               );
             })}
           </Carousel>
-          {/* <Image src='image/storybook.png' /> */}
         </ContentBox>
         <IntroBox>
           <Intro>
