@@ -21,7 +21,8 @@ const Title = styled.div`
   height: 80px;
   width: 250px;
   font-weight: 900;
-  background-color: #912c15;
+  background-color: #1cb155;
+  /* background-color: #912c15; */
   font-size: 50px;
   top: 150px;
   position: absolute;
