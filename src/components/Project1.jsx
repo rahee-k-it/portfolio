@@ -23,7 +23,7 @@ const Title = styled.div`
   align-items: center;
   height: 80px;
   width: 250px;
-  background-color: #912c15;
+  background-color: #1cb155;
   font-size: 50px;
   position: absolute;
   top: 150px;
@@ -43,7 +43,7 @@ const Title = styled.div`
     width: 150px;
     font-weight: 900;
     font-size: 30px;
-    top: 50px;
+    top: 70px;
   }
 `;
 const FlexBox = styled.div`

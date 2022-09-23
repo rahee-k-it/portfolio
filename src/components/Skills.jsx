@@ -21,7 +21,7 @@ const Title = styled.div`
   transition: opacity 1s ease-in-out;
   height: 80px;
   width: 250px;
-  background-color: #912c15;
+  background-color: #1cb155;
   font-size: 50px;
   top: 150px;
   position: absolute;
@@ -36,7 +36,7 @@ const Title = styled.div`
     width: 150px;
     font-weight: 900;
     font-size: 30px;
-    top: 50px;
+    top: 70px;
   }
 `;
 

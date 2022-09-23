@@ -22,7 +22,6 @@ const Title = styled.div`
   width: 250px;
   font-weight: 900;
   background-color: #1cb155;
-  /* background-color: #912c15; */
   font-size: 50px;
   top: 150px;
   position: absolute;
@@ -34,10 +33,10 @@ const Title = styled.div`
 
   @media (max-width: 400px) {
     height: 40px;
-    width: 150px;
+    width: 180px;
     font-weight: 900;
     font-size: 30px;
-    top: 50px;
+    top: 70px;
   }
 `;
 
