@@ -9,6 +9,10 @@ const CarouselContainer = styled.div`
   position: relative;
   overflow: hidden;
   box-shadow: 3px 3px 3px 3px gray;
+
+  @media (max-width: 400px) {
+    width: 300px;
+  }
 `;
 
 const NavigationWrapper = styled.div`
@@ -42,6 +46,10 @@ const Button = styled.button`
   :hover {
     opacity: 0.75;
   }
+
+  @media (max-width: 400px) {
+    display: none;
+  }
 `;
 
 function Carousel({ autoPlay = true, autoPlayDuration = 2000, children, className, itemWidth = 700, ...others }) {
@@ -73,17 +81,11 @@ function Carousel({ autoPlay = true, autoPlayDuration = 2000, children, classNam
   return (
     <CarouselContainer itemWidth={itemWidth} className={className} {...others}>
       <NavigationWrapper itemWidth={itemWidth}>
-        <Button
-          onClick={onClickLeft}
-          className='opacity-20 hover:opacity-75 transition-opacity rounded-full bg-slate-100 p-[14px]  ml-[6px]'
-        >
+        <Button onClick={onClickLeft}>
           <FontAwesomeIcon icon={faArrowLeft} />
         </Button>
 
-        <Button
-          onClick={onClickRight}
-          className='opacity-20 hover:opacity-75 transition-opacity rounded-full bg-slate-100 p-[14px] mr-[6px]'
-        >
+        <Button onClick={onClickRight}>
           <FontAwesomeIcon icon={faArrowRight} />
         </Button>
       </NavigationWrapper>

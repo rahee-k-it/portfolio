@@ -7,7 +7,7 @@ import CarouselItem from './carousel/CarouselItem';
 
 const Container = styled.div`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   position: relative;
   display: flex;
   justify-content: center;
@@ -30,6 +30,12 @@ const FlexBox = styled.div`
   transition: opacity 3s ease-in-out, transform 3s ease-in-out;
   transition-delay: ${({ delay = 0 }) => delay};
   transform: translate(${({ isMoved }) => (isMoved ? '0px' : '200px')}, ${({ isMoved }) => (isMoved ? '0px' : '0px')});
+
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    margin: 70px 0px 0px 0px;
+  }
 `;
 
 const ContentBox = styled.div`
@@ -43,6 +49,13 @@ const ContentBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 400px) {
+    height: 400px;
+    width: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
 `;
 
 const ContentTitle = styled.div`
@@ -51,6 +64,11 @@ const ContentTitle = styled.div`
   align-items: center;
   font-size: 35px;
   margin-bottom: 30px;
+
+  @media (max-width: 400px) {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
 `;
 
 const IntroBox = styled.div`
@@ -63,6 +81,11 @@ const IntroBox = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: #000000;
+
+  @media (max-width: 400px) {
+    height: 200px;
+    width: 250px;
+  }
 `;
 
 const Intro = styled.div`
@@ -72,6 +95,11 @@ const Intro = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 20px;
+
+  @media (max-width: 400px) {
+    font-size: 15px;
+    line-height: 1.1;
+  }
 `;
 
 const ItemImg = styled.div`
@@ -145,7 +173,10 @@ function Project2() {
           </Intro>
           <Intro style={{ alignItems: 'flex-start' }}>
             <FontAwesomeIcon icon={faGear} style={{ margin: '10px 20px 0px 0px' }} />
-            <p>React로 구현한 포트폴리오 사이트</p>
+            <p>
+              React로 구현한 포트폴리오
+              <br /> 사이트
+            </p>
           </Intro>
           <Intro>
             <FontAwesomeIcon icon={faLink} style={{ marginRight: '20px' }} />

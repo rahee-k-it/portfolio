@@ -7,13 +7,14 @@ import CarouselItem from './carousel/CarouselItem';
 
 const Container = styled.div`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: #000000;
 `;
+
 const Title = styled.div`
   font-weight: 900;
   border-radius: 10px;
@@ -26,13 +27,24 @@ const Title = styled.div`
   font-size: 50px;
   position: absolute;
   top: 150px;
-  left: 50px;
   position: absolute;
   z-index: 1;
   opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   transition: opacity 3s ease-in-out, transform 3s ease-in-out;
   transition-delay: ${({ delay = 0 }) => delay};
   transform: translate(${({ isMoved }) => (isMoved ? '0px' : '200px')}, ${({ isMoved }) => (isMoved ? '0px' : '0px')});
+
+  @media (min-width: 400px) {
+    left: 50px;
+  }
+
+  @media (max-width: 400px) {
+    height: 40px;
+    width: 150px;
+    font-weight: 900;
+    font-size: 30px;
+    top: 50px;
+  }
 `;
 const FlexBox = styled.div`
   display: flex;
@@ -49,7 +61,14 @@ const FlexBox = styled.div`
   transition: opacity 3s ease-in-out, transform 3s ease-in-out;
   transition-delay: ${({ delay = 0 }) => delay};
   transform: translate(${({ isMoved }) => (isMoved ? '0px' : '200px')}, ${({ isMoved }) => (isMoved ? '0px' : '0px')});
+
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    margin: 70px 0px 0px 0px;
+  }
 `;
+
 const ContentBox = styled.div`
   border-radius: 20px;
   height: 450px;
@@ -61,14 +80,28 @@ const ContentBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 400px) {
+    height: 400px;
+    width: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
 `;
+
 const ContentTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 35px;
   margin-bottom: 30px;
+
+  @media (max-width: 400px) {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
 `;
+
 const IntroBox = styled.div`
   height: 400px;
   width: 400px;
@@ -79,7 +112,13 @@ const IntroBox = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: #000000;
+
+  @media (max-width: 400px) {
+    height: 200px;
+    width: 250px;
+  }
 `;
+
 const Intro = styled.div`
   line-height: 1.5;
   font-size: 25px;
@@ -87,7 +126,13 @@ const Intro = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 20px;
+
+  @media (max-width: 400px) {
+    font-size: 15px;
+    line-height: 1.1;
+  }
 `;
+
 const ItemImg = styled.div`
   overflow: hidden;
   background-size: cover;
@@ -95,6 +140,7 @@ const ItemImg = styled.div`
   width: 100%;
   height: 350px;
 `;
+
 const GitHubLink = styled.a`
   color: white;
   text-decoration: none;

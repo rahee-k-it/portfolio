@@ -8,6 +8,10 @@ const ItemImg = styled.div`
   background-image: url(${({ imgSrc }) => imgSrc});
   width: 100%;
   height: 350px;
+
+  /* @media (max-width: 400px) {
+    height: 100px;
+  } */
 `;
 
 export const CarouselProject1 = (args) => (

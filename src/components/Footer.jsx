@@ -5,12 +5,12 @@ import { faFaceSmile } from '@fortawesome/free-solid-svg-icons';
 import Modal from './Modal';
 
 const Container = styled.div`
-  height: 15em;
-  width: 100%;
+  height: 25vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  background-color: #d9bdbd;
+  /* background-color: #d9bdbd; */
   padding-bottom: 20px;
   background-color: black;
 `;

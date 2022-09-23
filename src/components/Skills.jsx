@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,9 +24,20 @@ const Title = styled.div`
   background-color: #912c15;
   font-size: 50px;
   top: 150px;
-  left: 50px;
   position: absolute;
   z-index: 1;
+
+  @media (min-width: 400px) {
+    left: 50px;
+  }
+
+  @media (max-width: 400px) {
+    height: 40px;
+    width: 150px;
+    font-weight: 900;
+    font-size: 30px;
+    top: 50px;
+  }
 `;
 
 const ContentBox = styled.div`
@@ -42,6 +53,17 @@ const ContentBox = styled.div`
   justify-content: center;
   align-items: center;
   box-shadow: inset 0px 0px 35px 5px gray;
+
+  @media (max-width: 400px) {
+    height: 450px;
+    width: 300px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* flex-direction: column; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const Image = styled.div`
@@ -56,6 +78,15 @@ const Image = styled.div`
   :hover {
     height: 160px;
     width: 160px;
+  }
+
+  @media (max-width: 400px) {
+    height: 90px;
+    width: 90px;
+    :hover {
+      height: 110px;
+      width: 110px;
+    }
   }
 `;
 
@@ -84,6 +115,7 @@ function Skills() {
         <Image src='image/js.png' />
         <Image src='image/react.png' />
         <Image src='image/storybookLogo.png' />
+        <Image src='image/node.svg' />
       </ContentBox>
     </Container>
   );

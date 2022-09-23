@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: black;
+  background-color: #000000;
 `;
 
 const Title = styled.div`
@@ -24,9 +24,20 @@ const Title = styled.div`
   background-color: #912c15;
   font-size: 50px;
   top: 150px;
-  left: 50px;
   position: absolute;
   z-index: 1;
+
+  @media (min-width: 400px) {
+    left: 50px;
+  }
+
+  @media (max-width: 400px) {
+    height: 40px;
+    width: 150px;
+    font-weight: 900;
+    font-size: 30px;
+    top: 50px;
+  }
 `;
 
 const ContentBox = styled.div`
@@ -44,16 +55,25 @@ const ContentBox = styled.div`
   opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   transition: opacity 1s ease-in-out;
   padding-left: 50px;
+
+  @media (max-width: 400px) {
+    height: 500px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 10px;
+  }
 `;
 
 const Introduction = styled.div`
+  /* background-color: #2d98da; */
   display: flex;
   justify-content: center;
   align-items: center;
   line-height: 1.5;
   height: 300px;
   width: 600px;
-  padding: 0px 5px;
   text-align: start;
   font-size: 25px;
   :hover {
@@ -61,9 +81,16 @@ const Introduction = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  @media (max-width: 400px) {
+    height: 400px;
+    width: 300px;
+    font-size: 20px;
+  }
 `;
 
 const PersonalInformation = styled.div`
+  /* background-color: #2ddaac; */
   line-height: 2;
   height: 300px;
   width: 500px;
@@ -77,6 +104,13 @@ const PersonalInformation = styled.div`
     background: linear-gradient(to right, #a55eea, #2d98da);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  @media (max-width: 400px) {
+    height: 200px;
+    width: 300px;
+    font-size: 20px;
+    padding-left: 0px;
   }
 `;
 

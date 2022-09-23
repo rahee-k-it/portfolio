@@ -4,13 +4,23 @@ import styled from 'styled-components';
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  position: fixed;
   background-color: #000000cf;
-  top: 0;
-  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
+
+  @media (min-width: 400px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  @media (max-width: 400px) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -20,6 +30,11 @@ const Wrapper = styled.div`
 `;
 
 const Typing = styled.div`
+  @media (max-width: 400px) {
+    width: 27ch;
+    animation: typing 3s steps(27), blink 0.3s step-end infinite alternate;
+    font-size: 15px;
+  }
   color: white;
   width: 27ch;
   animation: typing 3s steps(27), blink 0.3s step-end infinite alternate;

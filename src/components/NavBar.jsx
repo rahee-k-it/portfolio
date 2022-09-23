@@ -5,7 +5,7 @@ import { faRocket } from '@fortawesome/free-solid-svg-icons';
 
 const Blur = styled.div`
   height: 50px;
-  width: 100%;
+  width: 100vw;
   position: absolute;
   backdrop-filter: blur(10px);
   position: fixed;
@@ -14,7 +14,7 @@ const Blur = styled.div`
 
 const Container = styled.div`
   height: 50px;
-  width: 100%;
+  width: 100vw;
   background-color: black;
   opacity: 0.7;
   display: flex;
@@ -23,9 +23,14 @@ const Container = styled.div`
   position: fixed;
   z-index: 3;
   box-shadow: 0px 0px 20px 0px white;
+
+  @media (max-width: 400px) {
+    /* position: sticky; */
+  }
 `;
 
 const HomeBtn = styled.div`
+  font-size: 20px;
   display: flex;
   justify-content: center;
   :hover {
@@ -34,10 +39,14 @@ const HomeBtn = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  @media (max-width: 400px) {
+    font-size: 15px;
+    margin-left: 10px;
+  }
 `;
 
 const Title = styled.div`
-  font-size: 20px;
   color: white;
 `;
 
@@ -47,7 +56,10 @@ const RocketIcon = styled.div`
   align-items: center;
   padding: 10px;
   color: white;
-  font-size: 20px;
+
+  @media (max-width: 400px) {
+    display: none;
+  }
 `;
 
 const TapBox = styled.div`
@@ -66,6 +78,11 @@ const Tap = styled.div`
     background: linear-gradient(to right, #a55eea, #2d98da);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 13px;
+    margin-right: 10px;
   }
 `;
 

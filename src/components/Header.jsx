@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   background-image: url('image/dot.jpg');
   background-size: cover;
   background-position: 50% 70%;
@@ -18,7 +18,7 @@ const H1 = styled.h1`
 `;
 
 const Span = styled.span`
-  font-size: 60px;
+  font-size: 70px;
   font-weight: 500;
   opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   position: relative;
@@ -92,6 +92,11 @@ const Span = styled.span`
         0 7px 0 #535c68, 0 8px 0 #535c68, 0 9px 0 #535c68, 0 50px 25px rgba(0, 0, 0, 0.2);
     }
   }
+
+  @media (max-width: 400px) {
+    font-weight: 500;
+    font-size: 20px;
+  }
 `;
 
 function Header() {
@@ -126,11 +131,11 @@ function Header() {
           <Span isShowing={opacity}>트</Span>
           <Span isShowing={opacity}>엔</Span>
           <Span isShowing={opacity}>드</Span>
-          &nbsp; &nbsp; &nbsp;
+          &nbsp; &nbsp;
           <Span isShowing={opacity}>개</Span>
           <Span isShowing={opacity}>발</Span>
           <Span isShowing={opacity}>자</Span>
-          &nbsp; &nbsp; &nbsp;
+          &nbsp; &nbsp;
           <Span isShowing={opacity}>김</Span>
           <Span isShowing={opacity}>라</Span>
           <Span isShowing={opacity}>희</Span>

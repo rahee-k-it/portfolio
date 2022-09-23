@@ -3,9 +3,13 @@ import styled from 'styled-components';
 import CarouselContext from './CarouselContext';
 
 const CarouselItemContainer = styled.div`
-  height: 100%;
+  height: 350px;
   width: ${({ itemWidth }) => `${itemWidth}px`};
   position: relative;
+
+  @media (max-width: 400px) {
+    height: 200px;
+  }
 `;
 
 function CarouselItem({ children }) {
