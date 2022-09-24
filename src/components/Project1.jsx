@@ -13,6 +13,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #000000;
+  overflow: hidden;
 `;
 
 const Title = styled.div`

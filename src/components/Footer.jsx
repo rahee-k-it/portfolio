@@ -52,7 +52,7 @@ function Footer() {
         </Icon>
       </ClickMe>
       {
-        modal == true ? <Modal offModal={offModal} /> : null //기계역할
+        modal ? <Modal offModal={offModal} /> : null //기계역할
       }
     </Container>
   );

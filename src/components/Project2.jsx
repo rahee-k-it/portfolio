@@ -13,6 +13,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: black;
+  overflow: hidden;
 `;
 
 const FlexBox = styled.div`
