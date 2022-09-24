@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSplotch } from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.div`
   height: 100vh;
@@ -20,17 +22,29 @@ const Title = styled.div`
   opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   transition: opacity 1s ease-in-out;
   height: 80px;
-  width: 250px;
+  width: 270px;
   background-color: #1cb155;
+  color: #f9f3c0;
+
   font-size: 50px;
   z-index: 1;
 
   @media (max-width: 400px) {
     height: 40px;
-    width: 150px;
+    width: 160px;
     font-weight: 900;
     font-size: 30px;
     margin: 50px 0px 10px 0px;
+  }
+`;
+
+const TitleIcon = styled.div`
+  font-size: 30px;
+  margin: 5px;
+
+  @media (max-width: 400px) {
+    font-size: 20px;
+    margin: 5px;
   }
 `;
 
@@ -97,7 +111,15 @@ function Skills() {
   }, [target]);
   return (
     <Container ref={setTarget}>
-      <Title isShowing={opacity}>Skills</Title>
+      <Title isShowing={opacity}>
+        <TitleIcon>
+          <FontAwesomeIcon icon={faSplotch} />
+        </TitleIcon>
+        Skills
+        <TitleIcon>
+          <FontAwesomeIcon icon={faSplotch} />
+        </TitleIcon>
+      </Title>
       <ContentBox isShowing={opacity}>
         <Image src='image/html.svg' />
         <Image src='image/css.svg' />

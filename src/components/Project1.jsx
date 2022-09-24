@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFile, faCalendarDays, faPeopleGroup, faGear, faLink } from '@fortawesome/free-solid-svg-icons';
+import { faSplotch, faFile, faCalendarDays, faPeopleGroup, faGear, faLink } from '@fortawesome/free-solid-svg-icons';
 import Carousel from './carousel/Carousel';
 import CarouselItem from './carousel/CarouselItem';
 
@@ -24,8 +24,9 @@ const Title = styled.div`
   justify-content: center;
   align-items: center;
   height: 80px;
-  width: 250px;
+  width: 350px;
   background-color: #1cb155;
+  color: #f9f3c0;
   font-size: 50px;
   z-index: 1;
   opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
@@ -35,10 +36,20 @@ const Title = styled.div`
 
   @media (max-width: 400px) {
     height: 40px;
-    width: 150px;
+    width: 210px;
     font-weight: 900;
     font-size: 30px;
     margin: 50px 0px 30px 0px;
+  }
+`;
+
+const TitleIcon = styled.div`
+  font-size: 30px;
+  margin: 5px;
+
+  @media (max-width: 400px) {
+    font-size: 20px;
+    margin: 5px;
   }
 `;
 
@@ -75,7 +86,7 @@ const ContentBox = styled.div`
     height: 400px;
     width: 300px;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0px;
   }
 `;
 
@@ -160,7 +171,13 @@ function Project1() {
   return (
     <Container ref={setTarget}>
       <Title isShowing={opacity} isMoved={translate}>
+        <TitleIcon>
+          <FontAwesomeIcon icon={faSplotch} />
+        </TitleIcon>
         Projects
+        <TitleIcon>
+          <FontAwesomeIcon icon={faSplotch} />
+        </TitleIcon>
       </Title>
       <FlexBox isShowing={opacity} isMoved={translate}>
         <ContentBox>

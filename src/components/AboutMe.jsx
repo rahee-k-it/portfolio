@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSplotch } from '@fortawesome/free-solid-svg-icons';
+<FontAwesomeIcon icon={faSplotch} />;
 
 const Container = styled.div`
   height: 100vh;
@@ -19,17 +22,28 @@ const Title = styled.div`
   opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   transition: opacity 1s ease-in-out;
   height: 80px;
-  width: 250px;
+  width: 370px;
   font-weight: 900;
   background-color: #1cb155;
   font-size: 50px;
+  color: #f9f3c0;
 
   @media (max-width: 400px) {
     height: 40px;
-    width: 180px;
+    width: 220px;
     font-weight: 900;
     font-size: 30px;
     margin: 50px 0px 10px 0px;
+  }
+`;
+
+const TitleIcon = styled.div`
+  font-size: 30px;
+  margin: 5px;
+
+  @media (max-width: 400px) {
+    font-size: 20px;
+    margin: 5px;
   }
 `;
 
@@ -126,7 +140,15 @@ function AboutMe() {
   }, [target]);
   return (
     <Container ref={setTarget}>
-      <Title isShowing={opacity}>About Me</Title>
+      <Title isShowing={opacity}>
+        <TitleIcon>
+          <FontAwesomeIcon icon={faSplotch} />
+        </TitleIcon>
+        About Me
+        <TitleIcon>
+          <FontAwesomeIcon icon={faSplotch} />
+        </TitleIcon>
+      </Title>
       <ContentBox isShowing={opacity}>
         <Introduction>
           안녕하세요. 개발이 즐거운 프론트엔드 개발자 김라희 입니다. 코드를 통해 화면을 원하는대로 구현할 수 있음에

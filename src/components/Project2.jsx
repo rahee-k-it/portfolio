@@ -53,7 +53,7 @@ const ContentBox = styled.div`
     height: 400px;
     width: 300px;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0px;
   }
 `;
 
