@@ -24,7 +24,7 @@ const Span = styled.span`
   position: relative;
   top: 2px;
   animation: bounce 0.5s ease infinite alternate;
-  color: #f1f4a1;
+  color: #f4a1b4;
   text-shadow: 0 1px 0 #535c68, 0 2px 0 #535c68, 0 3px 0 #535c68, 0 4px 0 #535c68, 0 5px 0 #535c68, 0 6px 0 transparent,
     0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
 
