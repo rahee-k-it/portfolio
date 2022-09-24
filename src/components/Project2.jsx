@@ -8,7 +8,6 @@ import CarouselItem from './carousel/CarouselItem';
 const Container = styled.div`
   height: 100vh;
   width: 100vw;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +22,6 @@ const FlexBox = styled.div`
   height: 500px;
   width: 1300px;
   margin: 150px 0px 0px 0px;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,6 +107,12 @@ const ItemImg = styled.div`
   background-image: url(${({ imgSrc }) => imgSrc});
   width: 100%;
   height: 350px;
+
+  //fnfnffnfn
+  @media (max-width: 400px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const GitHubLink = styled.a`

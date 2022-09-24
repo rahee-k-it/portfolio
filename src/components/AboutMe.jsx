@@ -5,14 +5,14 @@ const Container = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
   background-color: #000000;
 `;
 
 const Title = styled.div`
-  border-radius: 10px;
+  border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,20 +23,13 @@ const Title = styled.div`
   font-weight: 900;
   background-color: #1cb155;
   font-size: 50px;
-  top: 150px;
-  position: absolute;
-  z-index: 1;
-
-  @media (min-width: 400px) {
-    left: 50px;
-  }
 
   @media (max-width: 400px) {
     height: 40px;
     width: 180px;
     font-weight: 900;
     font-size: 30px;
-    top: 70px;
+    margin: 50px 0px 10px 0px;
   }
 `;
 
@@ -46,7 +39,6 @@ const ContentBox = styled.div`
   height: 400px;
   width: 1100px;
   margin: 60px 0px 0px 0px;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,7 +59,6 @@ const ContentBox = styled.div`
 `;
 
 const Introduction = styled.div`
-  /* background-color: #2d98da; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,7 +81,6 @@ const Introduction = styled.div`
 `;
 
 const PersonalInformation = styled.div`
-  /* background-color: #2ddaac; */
   line-height: 2;
   height: 300px;
   width: 500px;

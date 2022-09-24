@@ -8,8 +8,8 @@ import CarouselItem from './carousel/CarouselItem';
 const Container = styled.div`
   height: 100vh;
   width: 100vw;
-  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #000000;
@@ -17,8 +17,9 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
+  margin: 30px;
   font-weight: 900;
-  border-radius: 10px;
+  border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,35 +27,24 @@ const Title = styled.div`
   width: 250px;
   background-color: #1cb155;
   font-size: 50px;
-  position: absolute;
-  top: 150px;
-  position: absolute;
   z-index: 1;
   opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   transition: opacity 3s ease-in-out, transform 3s ease-in-out;
   transition-delay: ${({ delay = 0 }) => delay};
   transform: translate(${({ isMoved }) => (isMoved ? '0px' : '200px')}, ${({ isMoved }) => (isMoved ? '0px' : '0px')});
 
-  @media (min-width: 400px) {
-    left: 50px;
-  }
-
   @media (max-width: 400px) {
     height: 40px;
     width: 150px;
     font-weight: 900;
     font-size: 30px;
-    top: 70px;
+    margin: 50px 0px 30px 0px;
   }
 `;
+
 const FlexBox = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   height: 500px;
   width: 1300px;
-  margin: 150px 0px 0px 0px;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,7 +56,6 @@ const FlexBox = styled.div`
   @media (max-width: 400px) {
     display: flex;
     flex-direction: column;
-    margin: 70px 0px 0px 0px;
   }
 `;
 

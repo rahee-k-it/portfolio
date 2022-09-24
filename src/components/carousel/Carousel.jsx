@@ -45,6 +45,7 @@ const Button = styled.button`
   margin: 10px;
   :hover {
     opacity: 0.75;
+    cursor: pointer;
   }
 
   @media (max-width: 400px) {

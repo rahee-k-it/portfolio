@@ -5,15 +5,15 @@ const Container = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
   background-color: black;
 `;
 
 const Title = styled.div`
   font-weight: 900;
-  border-radius: 10px;
+  border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,32 +23,24 @@ const Title = styled.div`
   width: 250px;
   background-color: #1cb155;
   font-size: 50px;
-  top: 150px;
-  position: absolute;
   z-index: 1;
-
-  @media (min-width: 400px) {
-    left: 50px;
-  }
 
   @media (max-width: 400px) {
     height: 40px;
     width: 150px;
     font-weight: 900;
     font-size: 30px;
-    top: 70px;
+    margin: 50px 0px 10px 0px;
   }
 `;
 
 const ContentBox = styled.div`
   opacity: ${({ isShowing }) => (isShowing ? '1' : '0')};
   transition: opacity 3s ease-in-out;
-  border-radius: 0px;
   height: 400px;
   width: 1100px;
   background-color: #ffffff;
   margin: 60px 0px 0px 0px;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,12 +49,9 @@ const ContentBox = styled.div`
   @media (max-width: 400px) {
     height: 450px;
     width: 300px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* flex-direction: column; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin: 0px;
   }
 `;
 

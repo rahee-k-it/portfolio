@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  /* background-color: #92cc8c; */
   height: 100vh;
   width: 100vw;
   font-size: 3px;
@@ -14,8 +13,7 @@ const Container = styled.div`
 `;
 
 const ContentBox = styled.div`
-  padding: 0px 20px 0px 20px;
-  /* background-color: #cc8c8c; */
+  padding: 0px 70px 0px 70px;
   height: 600px;
   width: 100vw;
   display: flex;
